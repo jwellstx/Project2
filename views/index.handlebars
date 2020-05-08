@@ -1,33 +1,270 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
+<div class="jumbotron">
+  <h1 class="title">Hot Wheels</h1>
+</div>
+        <form class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="aligned-name">Username</label>
+            <input type="text" id="aligned-name" placeholder="Username" />
+            <span class="pure-form-message-inline">This is a required field.</span>
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-password">Password</label>
+            <input type="password" id="aligned-password" placeholder="Password" />
+        </div>
+        <div class="pure-control-group">
+            <label for="aligned-email">Email Address</label>
+            <input type="email" id="aligned-email" placeholder="Email Address" />
+        </div>
+        <div class="pure-controls">
+            <label for="aligned-cb" class="pure-checkbox">
+                <input type="checkbox" id="aligned-cb" /> I&#x27;ve read the terms and conditions</label>
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+    </fieldset>
+</form>
+<!--Card #1 -->
+<div id="aventador" class="card" style="width: 18rem;">
+  <img src="/img/Aventador.jpg" class="card-img-top" alt="aventador">
+  <div class="card-body">
+    <h5 class="card-title">Lamborghini Aventador</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
   </div>
 </div>
+
+<!--Card #2 -->
+<div id="720S" class="card" style="width: 18rem;">
+  <img src="/img/720S.jpg" class="card-img-top" alt="720S">
+  <div class="card-body">
+    <h5 class="card-title">McLaren 720S</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #3 -->
+<div id="DBS" class="card" style="width: 18rem;">
+  <img src="/img/DBS.jpg" class="card-img-top" alt="DBS">
+  <div class="card-body">
+    <h5 class="card-title">Aston Martin DBS Superleggera Volante</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #4 -->
+<div id="Huayra" class="card" style="width: 18rem;">
+  <img src="/img/Huayra.jpg" class="card-img-top" alt="Huayra">
+  <div class="card-body">
+    <h5 class="card-title">Pagani Huayra</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #5 -->
+<div id="Huracan" class="card" style="width: 18rem;">
+  <img src="/img/Huracan.jpg" class="card-img-top" alt="Huracan">
+  <div class="card-body">
+    <h5 class="card-title">Lamborghini Huracan EVO</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #6 -->
+<div id="Sesto" class="card" style="width: 18rem;">
+  <img src="/img/Sesto.jpg" class="card-img-top" alt="Sesto">
+  <div class="card-body">
+    <h5 class="card-title">Lamborghini Sesto Elemento</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #7 -->
+<div id="Taycan" class="card" style="width: 18rem;">
+  <img src="/img/taycan.jpg" class="card-img-top" alt="Taycan">
+  <div class="card-body">
+    <h5 class="card-title">Porsche Taycan 4S</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #8 -->
+<div id="Trevita" class="card" style="width: 18rem;">
+  <img src="/img/Trevita.jpg" class="card-img-top" alt="Trevita">
+  <div class="card-body">
+    <h5 class="card-title">Koenigsegg Trevita</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #9 -->
+<div id="Sweptail" class="card" style="width: 18rem;">
+  <img src="/img/Sweptail.jpg" class="card-img-top" alt="Sweptail">
+  <div class="card-body">
+    <h5 class="card-title">Rolls-Royce Sweptail</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #10 -->
+<div id="Valkrie" class="card" style="width: 18rem;">
+  <img src="/img/Valkrie.jpg" class="card-img-top" alt="Valkrie">
+  <div class="card-body">
+    <h5 class="card-title">Aston Martin Valkrie</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #11 -->
+<div id="Pininfarina" class="card" style="width: 18rem;">
+  <img src="/img/Pininfarina.jpg" class="card-img-top" alt="Pininfarina">
+  <div class="card-body">
+    <h5 class="card-title">Ferrari Pininfarina</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+<br>
+<!--SUV Section-->
+<!--Card #12 -->
+<div id="Urus" class="card" style="width: 18rem;">
+  <img src="/img/Urus.jpg" class="card-img-top" alt="Urus">
+  <div class="card-body">
+    <h5 class="card-title">Lamborghini Urus</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+
+<!--Card #13 -->
+<div id="G63" class="card" style="width: 18rem;">
+  <img src="/img/G63.jpg" class="card-img-top" alt="G63">
+  <div class="card-body">
+    <h5 class="card-title">Mercedes Benz G63 AMG</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+
+<!--Card #14 -->
+<div id="Cullinan" class="card" style="width: 18rem;">
+  <img src="/img/Cullinan.jpg" class="card-img-top" alt="Cullinan">
+  <div class="card-body">
+    <h5 class="card-title">Rolls-Royce Cullinan</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+
+<!--Card #15 -->
+<div id="Cayenne" class="card" style="width: 18rem;">
+  <img src="/img/Cayenne.jpg" class="card-img-top" alt="Cayenne">
+  <div class="card-body">
+    <h5 class="card-title">Porsche Cayenne</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+
+<!--Card #16 -->
+<div id="Levante" class="card" style="width: 18rem;">
+  <img src="/img/Levante.jpg" class="card-img-top" alt="Levante">
+  <div class="card-body">
+    <h5 class="card-title">Maserati Levante</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+
+<!--Card #17 -->
+<div id="Bentayga" class="card" style="width: 18rem;">
+  <img src="/img/Bentayga.jpg" class="card-img-top" alt="Bentayga">
+  <div class="card-body">
+    <h5 class="card-title">Bentley Bentayga Mulliner</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+
+<!--Card #18 -->
+<div id="DBX" class="card" style="width: 18rem;">
+  <img src="/img/DBX.jpg" class="card-img-top" alt="DBX">
+  <div class="card-body">
+    <h5 class="card-title">Aston Martin DBX</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+<br>
+
+<!--Funny Cars-->
+<!--Card #19 -->
+<div id="DeLorean" class="card" style="width: 18rem;">
+  <img src="/img/Delorean.jpg" class="card-img-top" alt="Delorean">
+  <div class="card-body">
+    <h5 class="card-title">Doc Brown's DeLorean</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+<!--Card #20 -->
+<div id="Mirthmobile" class="card" style="width: 18rem;">
+  <img src="/img/Mirthmobile.jpg" class="card-img-top" alt="Mirthmobile">
+  <div class="card-body">
+    <h5 class="card-title">The Mirthmobile</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+
+<!--Card #21 -->
+<div id="Gigahorse" class="card" style="width: 18rem;">
+  <img src="/img/Gigahorse.jpg" class="card-img-top" alt="Gigahorse">
+  <div class="card-body">
+    <h5 class="card-title">The Gigahorse</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+
+<!--Card #22 -->
+<div id="Tumbler" class="card" style="width: 18rem;">
+  <img src="/img/Tumbler.jpg" class="card-img-top" alt="Tumbler">
+  <div class="card-body">
+    <h5 class="card-title">Batman's Tumbler</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
+
+<!--Card #23 -->
+<div id="Weinermobile" class="card" style="width: 18rem;">
+  <img src="/img/Weinermobile.jpg" class="card-img-top" alt="Weinermobile">
+  <div class="card-body">
+    <h5 class="card-title">Lamborghini Aventador</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Rent Me!</a>
+  </div>
+</div>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
