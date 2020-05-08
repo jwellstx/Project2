@@ -1,15 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "Mlpftw13!",
-    "database": "exampledb",
+    "password": "password",
+    "database": "jawsdb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Mlpftw13!",
-    "database": "testdb",
+    "password": "password",
+    "database": "jawsdb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
