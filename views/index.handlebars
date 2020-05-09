@@ -3,6 +3,7 @@
 </div>
         <form class="pure-form pure-form-aligned">
     <fieldset>
+      <h4>Returning Users</h4>
         <div class="pure-control-group">
             <label for="aligned-name">Username</label>
             <input type="text" id="aligned-name" placeholder="Username" />
@@ -12,15 +13,8 @@
             <label for="aligned-password">Password</label>
             <input type="password" id="aligned-password" placeholder="Password" />
         </div>
-        <div class="pure-control-group">
-            <label for="aligned-email">Email Address</label>
-            <input type="email" id="aligned-email" placeholder="Email Address" />
-        </div>
-        <div class="pure-controls">
-            <label for="aligned-cb" class="pure-checkbox">
-                <input type="checkbox" id="aligned-cb" /> I&#x27;ve read the terms and conditions</label>
-            <button type="submit" class="pure-button pure-button-primary">Submit</button>
-        </div>
+        
+        
     </fieldset>
 </form>
 
@@ -29,12 +23,39 @@
   <img src="/img/{{model}}.jpg" class="card-img-top" alt={{model}}>
   <div class="card-body">
     <h5 class="card-title"><p>{{make}} {{model}}</p></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Rent Me!</a>
+    <br>
+    <p class="card-text">${{pricePerDay}} per day</p>
+    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >Rent Me!</a>
   </div>
 </div>
 {{/each}}
 
 
+{{#each cars}}
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" >
+          <img src="/img/{{model}}.jpg"
+          <h4 class="modal-title">{{make}} {{model}}</h4>
+        </div>
+        <div class="modal-body">
+          <!--rental info goes below -->
+          <p>Rental info goes here!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

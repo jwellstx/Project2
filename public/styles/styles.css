@@ -2,6 +2,7 @@
   opacity: 1;
   background-image: url(../img/banner.jpg);
   height: 700px;
+  background-size: cover;
   
 }
 
@@ -20,11 +21,7 @@ opacity: 1;
 }
 
 
-.pure-form{
-  border:black;
-  border-width: 5px;
-  text-align: left;
-}
+
 
 .card{
   float: left;
