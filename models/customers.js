@@ -29,6 +29,14 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        len: [1]
+      }
+    },
     phone: {
       type: DataTypes.STRING,
       allowNull: false,

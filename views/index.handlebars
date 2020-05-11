@@ -1,22 +1,40 @@
 <div class="jumbotron">
   <h1 class="title">Hot Wheels</h1>
 </div>
-        <form class="pure-form pure-form-aligned">
-    <fieldset>
-      <h4>Returning Users</h4>
-        <div class="pure-control-group">
-            <label for="aligned-name">Username</label>
-            <input type="text" id="aligned-name" placeholder="Username" />
-            <span class="pure-form-message-inline">This is a required field.</span>
+       </div>
+  <div class="container">
+    <h3>Our clients have high expectations for their vehicles,
+       and equally high expectations about the rentals and the professionals who serve them. 
+      <strong>HOT WHEELS</strong>  is widely recognized to be among the best in quality, reliability,
+       value and customer satisfaction in both sales and service </h3>
+       
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <form >
+                      <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Enter E-mail" >
+                      </div>
+                      <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Enter Password" >
+                      </div>
+                      <div class="form-group">
+                        <a href="/login" class="btn btn-danger btn-block">Login</a>
+                      </div>
+                      <div class="form-group">
+                      <p>Don't have a member account yet?</p>
+                        <a href="/member" class="btn btn-success">Join US</a>
+                      </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="pure-control-group">
-            <label for="aligned-password">Password</label>
-            <input type="password" id="aligned-password" placeholder="Password" />
-        </div>
-        
-        
-    </fieldset>
-</form>
+    </div>
+
+       
+</div>
+  
 
 {{#each cars}}
 <div id={{model}} class="card" style="width: 18rem;">

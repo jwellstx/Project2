@@ -6,12 +6,12 @@ module.exports = function(app) {
      db.Cars.findAll({}).then(function(rows) {
       res.render("index", { cars: rows.map(car => car.toJSON()) });
      });
-  //       msg: "Welcome!",
-  //       examples: dbExamples
-  //     });
-  //   });
+  
   });
-
+  app.get("/member",(req,res)=>{
+    res.render("memberAccount")
+  })
+  
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
   //   db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
@@ -22,6 +22,9 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
+ 
+  
+  
   app.get("*", function(req, res) {
     res.render("404");
   });

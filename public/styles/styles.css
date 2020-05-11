@@ -7,7 +7,7 @@
 }
 
 .title{
-  color: #FFFFFF;
+color: #FFFFFF;
 font-size: 200px;
 color: #FFFFFF;
 text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
@@ -19,10 +19,6 @@ opacity: 1;
   border: black;
   border-width: 5px;
 }
-
-
-
-
 .card{
   float: left;
   margin-top: 30px;
@@ -36,3 +32,22 @@ opacity: 1;
   max-width: 246px;
   max-height: 24px;
 }
+section{
+    margin : 20px auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px;
+    text-align: center;
+}
+
+#account{
+ background-color: #f8993b;
+ opacity: 0.9;
+  
+}
+.info, form,h2{
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+                 
