@@ -14,7 +14,11 @@
             </div>
         </div>
         <div class="col-md-4 mx-auto">
+            
             <h2>Member Form</h2>
+            <div id="DivError" >
+                <button type="button" class="btn btn-danger" id="error" ></button>
+            </div>
             <form  >
                 <div class="form-group">
                     <input type="text" id ="firstName" name="firstName" class="form-control" placeholder="Enter  Name" required>
@@ -33,6 +37,7 @@
                 <hr class="bg-info">
                 <div class="form-group">
                     <input type="tel"  id="phone" name="phone" class="form-control" placeholder="Enter phone number" required>
+                <span>Format 123-456-7890</span>
                 </div>
                 <div class="form-group">
                     <input type="text" id ="driversLicenseNo" name="driversLicenseNo" class="form-control" placeholder="Driver License Number" required>

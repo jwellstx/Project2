@@ -5,91 +5,65 @@ $(".rentMe").on("click", function() {
   $(".rentalCar").attr("src", "/img/" + carModel + ".jpg");
 });
 
-// The API object contains methods for each kind of request we'll make
-// Note needed but keeping for reference
-// var API = {
-//   saveExample: function(example) {
-//     return $.ajax({
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       type: "POST",
-//       url: "api/examples",
-//       data: JSON.stringify(example)
-//     });
-//   },
-//   getExamples: function() {
-//     return $.ajax({
-//       url: "api/examples",
-//       type: "GET"
-//     });
-//   },
-//   deleteExample: function(id) {
-//     return $.ajax({
-//       url: "api/examples/" + id,
-//       type: "DELETE"
-//     });
-//   }
-// };
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+console.log('In Login Account!');
+
+var $LoginBtn = $("#login");
+var $returLogin=$(".return-login");
 var API = {
-     saveCustomer: function(customer) {
-       return $.ajax({
-         headers: {
-         "Content-Type": "application/json"
-        },
-         type: "POST",
-        url: "member",
-        data: JSON.stringify(customer)
-      });
-     
-    },
-    getCustomer: function() {
-          return $.ajax({
-            url: "member",
-             type: "GET"
-          });
-        }
-   };
-
-   
-        
-      
-   
+  saveCustomer: function(customer) {
+    return $.ajax({
+      headers: {
+      "Content-Type": "application/json"
+     },
+      type: "POST",
+     url: "login",
+     data: JSON.stringify(customer)
+   })
   
+ },
+ getExamples: function() {
+  return $.ajax({
+    url: "login",
+    type: "GET"
+  });
+}
+};
 
+var handleFormSubmit = function(event) {
+  event.preventDefault();
 
-
-
-
-   var handleFormSubmit = function(event) {
-    event.preventDefault();
-  
-    var customer = {
-      firstName: $("#firstName").val().trim(),
-      lastName: $("#lastName").val().trim(),
-      email: $("#email").val().trim(),
-      password: $("#password").val().trim(),
-      phone:$("#phone").val().trim(),
-      driversLicenseNo:$("#driversLicenseNo").val().trim(),
-      driversLicenseState:$("#driversLicenseState").val().trim()
-      
-    };
-  
+  var customer = {
     
-  
-    API.saveCustomer(customer).then(function(apIresponse) {
-      console.log(apIresponse,"result");
-     
-    });
-  
-    $("#firstName").val("");
-    $("#lastName").val("");
-    $("#email").val("");
-    $("#password").val("");
-    $("#phone").val("")
-    $("#driversLicenseNo").val("");
-    $("#driversLicenseState").val("");
+    email: $("#email").val().trim(),
+    password: $("#password").val().trim()
+   
+    
   };
-   $submitBtn.on("click", handleFormSubmit);
+
+   API.saveCustomer(customer)
+    .then(function(apIresponse) {
+      
+      console.log(apIresponse,"result"); 
+     
+      $("#email").val("");
+      $("#password").val("");
+     
+  });
+
+};
+
+var Handlecustomers = function() {
+  API.getCustomer()
+  .then(function(data) {
+    
+      var $p = $("<p>").text(data.firstName + data.lastName);
+      $returLogin.append($p);
+
+    });
+
+    
+}
+$(document).ready(function() {
+ 
+  $LoginBtn.on("click", handleFormSubmit);
+})

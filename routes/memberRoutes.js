@@ -1,12 +1,9 @@
 var db = require("../models");
 const bcrypt = require("bcryptjs");
-const {
-  Op
-} = require("sequelize");
+const {  Op} = require("sequelize");
 
 
 module.exports = function (app) {
-
   
   app.get("/members", function(req, res) {
    console.log('Inside member', req.body);
@@ -14,7 +11,7 @@ module.exports = function (app) {
    });
 
   app.post("/members", (req, res) => {
-    console.log('REQ.BODY', req.body);
+    //console.log('REQ.BODY', req.body);
     db.Customer.findOne({
         where: {
           [Op.or]: [{
@@ -25,9 +22,9 @@ module.exports = function (app) {
         }
       })
       .then(function (customer) {
-        console.log(customer, 'THE CUSTOMER!');
+       // console.log(customer, 'THE CUSTOMER!');
         if (customer) {
-          console.log("Th consois email is already taken/Driver license is already taken")
+         // console.log("The  email is already taken/Driver license is already taken")
           return res.json({
             userExists: true
           })

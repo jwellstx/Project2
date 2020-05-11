@@ -45,6 +45,9 @@ section{
  opacity: 0.9;
   
 }
+#error{
+  margin-top: 10px;
+}
 .info, form,h2{
   margin-top: 20px;
   margin-bottom: 15px;

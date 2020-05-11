@@ -38,7 +38,10 @@ var handleFormSubmit = function(event) {
 
    API.saveCustomer(customer)
     .then(function(apIresponse) {
-      
+      if(apIresponse. userExists){
+        $("#DivError").show();
+        $("#error").text("Email address /DL are already taken");
+      }
       console.log(apIresponse,"result"); 
       $("#firstName").val("");
       $("#lastName").val("");
@@ -64,19 +67,8 @@ var Handlecustomers = function() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 $(document).ready(function() {
-
+  $("#DivError").hide();
   $submitBtn.on("click", handleFormSubmit);
 })
 
