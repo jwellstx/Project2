@@ -32,6 +32,7 @@ $(".rentMe").on("click", function() {
 //   }
 // };
 var $submitBtn = $("#submit");
+var $exampleList = $("#example-list");
 var API = {
      saveCustomer: function(customer) {
        return $.ajax({
@@ -43,8 +44,24 @@ var API = {
         data: JSON.stringify(customer)
       });
      
-    }
+    },
+    getCustomer: function() {
+          return $.ajax({
+            url: "member",
+             type: "GET"
+          });
+        }
    };
+
+   
+        
+      
+   
+  
+
+
+
+
 
    var handleFormSubmit = function(event) {
     event.preventDefault();
@@ -62,7 +79,8 @@ var API = {
   
     
   
-    API.saveCustomer(customer).then(function() {
+    API.saveCustomer(customer).then(function(apIresponse) {
+      console.log(apIresponse,"result");
      
     });
   
