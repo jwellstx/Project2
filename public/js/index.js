@@ -5,65 +5,63 @@ $(".rentMe").on("click", function() {
   $(".rentalCar").attr("src", "/img/" + carModel + ".jpg");
 });
 
-console.log('In Login Account!');
+console.log("In Login Account!");
 
 var $LoginBtn = $("#login");
-var $returLogin=$(".return-login");
+var $returLogin = $(".return-login");
 var API = {
   saveCustomer: function(customer) {
     return $.ajax({
       headers: {
-      "Content-Type": "application/json"
-     },
+        "Content-Type": "application/json"
+      },
       type: "POST",
-     url: "login",
-     data: JSON.stringify(customer)
-   })
-  
- },
- getExamples: function() {
-  return $.ajax({
-    url: "login",
-    type: "GET"
-  });
-}
+      url: "login",
+      data: JSON.stringify(customer)
+    });
+  },
+  getExamples: function() {
+    return $.ajax({
+      url: "login",
+      type: "GET"
+    });
+  }
 };
 
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var customer = {
-    
-    email: $("#email").val().trim(),
-    password: $("#password").val().trim()
-   
-    
+    email: $("#email")
+      .val()
+      .trim(),
+    password: $("#password")
+      .val()
+      .trim()
   };
 
-   API.saveCustomer(customer)
-    .then(function(apIresponse) {
-      
-      console.log(apIresponse,"result"); 
-     
-      $("#email").val("");
-      $("#password").val("");
-     
-  });
+  API.saveCustomer(customer).then(function(apIresponse) {
+    console.log(apIresponse, "result");
 
+    $("#email").val("");
+    $("#password").val("");
+  });
 };
 
 var Handlecustomers = function() {
-  API.getCustomer()
-  .then(function(data) {
-    
-      var $p = $("<p>").text(data.firstName + data.lastName);
-      $returLogin.append($p);
-
-    });
-
-    
-}
+  API.getCustomer().then(function(data) {
+    var $p = $("<p>").text(data.firstName + data.lastName);
+    $returLogin.append($p);
+  });
+};
 $(document).ready(function() {
- 
-  $LoginBtn.on("click", handleFormSubmit);
-})
+  var checkUserFirstName = localStorage.getItem("customerFirstName");
+  var checkUserLastName = localStorage.getItem("customerLastName");
+  if (checkUserFirstName && checkUserLastName) {
+    $("#userName").html(checkUserFirstName + " " + checkUserLastName);
+    $(".userForm").hide();
+  }
+  else {
+    $LoginBtn.on("click", handleFormSubmit);
+  }
+});
