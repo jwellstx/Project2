@@ -1,8 +1,21 @@
 $(".rentMe").on("click", function() {
   var carMake = $(this).attr("data-make");
   var carModel = $(this).attr("data-model");
+  var carId = $(this).attr("data-id");
   $(".modal-title").text(carMake + " " + carModel);
   $(".rentalCar").attr("src", "/img/" + carModel + ".jpg");
+  $(".rentIt").attr("data-id", carId);
+});
+
+$(".rentIt").on("click", function() {
+  var customerID = localStorage.getItem("customerID");
+  if (customerID) {
+    var carId = $(this).attr("data-id");
+    console.log(customerID + " " + carId);
+  }
+  else {
+    alert("You are either not logged on or a registered user! Please login/register to continue!");
+  }
 });
 
 console.log("In Login Account!");
@@ -49,9 +62,10 @@ $(document).ready(function() {
 
   var checkUserFirstName = localStorage.getItem("customerFirstName");
   var checkUserLastName = localStorage.getItem("customerLastName");
-  if (checkUserFirstName && checkUserLastName) {
-
-    $("#userName").html(checkUserFirstName + " " + checkUserLastName);
+  var checkCustomerID = localStorage.getItem("customerID");
+  if (checkUserFirstName && checkUserLastName && checkCustomerID) {
+    $("#userName, #userName2").html(checkUserFirstName + " " + checkUserLastName);
+    $("#customerID").html(checkCustomerID);
     $(".userForm").hide();
     $(".return-login").show();
 

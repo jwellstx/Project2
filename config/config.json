@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "hotwheels",
+    "password": "password",
+    "database": "jawsdb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Mlpftw13!",
+    "password": "password",
     "database": "jawsdb",
     "host": "localhost",
     "dialect": "mysql",

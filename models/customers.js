@@ -1,11 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Customer = sequelize.define("Customer", {
-    customerId: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true
-    },
     firstName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -63,5 +57,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
+  Customer.associate = models => {
+    Customer.belongsTo(models.Transaction, {
+      // foreignKey: {
+      //   allowNull: false
+      // }
+    });
+  };
+
   return Customer;
 };

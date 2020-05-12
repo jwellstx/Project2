@@ -2,10 +2,12 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 
+
 var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
+
 
 // Middleware
 //app.use(flash());
@@ -23,18 +25,19 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
+require("./routes/rentalRoutes")(app);
 require("./routes/loginRoutes")(app);
 require("./routes/memberRoutes")(app);
 require("./routes/htmlRoutes")(app);
+
 
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
-}
+// if (process.env.NODE_ENV === "test") {
+  syncOptions.force = false;
+// }
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {

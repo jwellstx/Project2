@@ -9,16 +9,10 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "members",
-      data: JSON.stringify(customer),
-      success: (data) => {
-        localStorage.setItem("customerFirstName", customer.firstName);
-        localStorage.setItem("customerLastName", customer.lastName);
-        window.location.assign("/");
-      }
+      url: "/members",
+      data: JSON.stringify(customer)
     });
-  },
-  
+  }
 };
 
 var handleFormSubmit = function(event) {
@@ -49,7 +43,11 @@ var handleFormSubmit = function(event) {
   };
 
   API.saveCustomer(customer).then(function(apIresponse) {
-    
+    console.log(apIresponse);
+    localStorage.setItem("customerFirstName", apIresponse.firstName);
+    localStorage.setItem("customerLastName", apIresponse.lastName);
+    localStorage.setItem("customerID", apIresponse.id);
+    // window.location.assign("/");
     console.log(apIresponse, "result");
     $("#firstName").val("");
     $("#lastName").val("");
@@ -61,9 +59,6 @@ var handleFormSubmit = function(event) {
   });
 };
 
-
-
 $(document).ready(function() {
- 
   $submitBtn.on("click", handleFormSubmit);
 });

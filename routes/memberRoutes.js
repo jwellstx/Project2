@@ -3,8 +3,6 @@ const bcrypt = require("bcryptjs");
 const { Op } = require("sequelize");
 
 module.exports = function (app) {
-  
-
   app.post("/members", (req, res) => {
     //console.log('REQ.BODY', req.body);
     db.Customer.findOne({
@@ -17,9 +15,7 @@ module.exports = function (app) {
       }
     })
       .then(function (customer) {
-        
         if (customer) {
-          
           return res.json({
             userExists: true
           })
@@ -28,18 +24,7 @@ module.exports = function (app) {
           var data = req.body;
 
           db.Customer.create(data).then(function (newCustomer) {
-
-            var customerResponseObj = {
-              customerId: newCustomer.customerId,
-              driversLicenseNo: newCustomer.driversLicenseNo,
-              email: newCustomer.email,
-              firstName: newCustomer.firstName,
-              lastName: newCustomer.lastName,
-              phone: newCustomer.phone,
-              updatedAt: newCustomer.updatedAt,
-              userExists: false
-            }
-            res.json(customerResponseObj)
+            res.json(newCustomer);  // need newCustomer to get id
           });
         }
       });

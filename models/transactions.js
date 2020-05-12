@@ -1,35 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
   var Transaction = sequelize.define("Transaction", {
-    transactionId: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true
-    },
     transactionDate: {
       type: DataTypes.DATE,
       allowNull: false,
       validate: {
         notEmpty: true,
         isDate: true
-      }
-    },
-    customerId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-        isInt: true,
-        len: [1]
-      }
-    },
-    carId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-        isInt: true,
-        len: [1]
       }
     },
     rentalDate: {
@@ -40,8 +16,9 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     rentalStatus: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: 0,
       validate: {
         notEmpty: true,
         len: [1]
@@ -56,5 +33,11 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
+  Transaction.associate = models => {
+    Transaction.hasOne(models.Cars, {});
+    Transaction.hasOne(models.Customer, {});
+  };
+
   return Transaction;
 };
