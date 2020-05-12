@@ -43,12 +43,11 @@ var handleFormSubmit = function(event) {
   };
 
   API.saveCustomer(customer).then(function(apIresponse) {
-    console.log(apIresponse);
     localStorage.setItem("customerFirstName", apIresponse.firstName);
     localStorage.setItem("customerLastName", apIresponse.lastName);
     localStorage.setItem("customerID", apIresponse.id);
-    // window.location.assign("/");
-    console.log(apIresponse, "result");
+    window.location.assign("/");
+    // console.log(apIresponse, "result");
     $("#firstName").val("");
     $("#lastName").val("");
     $("#email").val("");
