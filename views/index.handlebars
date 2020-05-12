@@ -46,7 +46,7 @@
     <h5 class="card-title"><p>{{make}} {{model}}</p></h5>
     <br>
     <p class="card-text">${{pricePerDay}} per day</p>
-    <a href="#" data-make="{{make}}" data-model="{{model}}" class="rentMe btn btn-primary" data-toggle="modal" data-target="#myModal" >Rent Me!</a>
+    <a href="#" data-price="{{pricePerDay}}" data-id="{{id}}" data-make="{{make}}" data-model="{{model}}" class="rentMe btn btn-primary" data-toggle="modal" data-target="#myModal" >Rent Me!</a>
   </div>
 </div>
 {{/unless}}
@@ -74,7 +74,8 @@
           User: <div id="userName2"></div>
           {{!-- customer id needed for post to transactions route --}}
           CustomerID: <div id="customerID"></div>
-          <input type="text"  class="name" name="name" placeholder="Your Name" required="">
+          Price: <div id="carPrice"></div>
+          {{!-- <input type="text"  class="name" name="name" placeholder="Your Name" required="">
           <input type="email" name="email" placeholder="Enter your Email..." required="">
           <input type="text"  class="name" name="name" placeholder="Phone Number" required="">
           <div class="clear"> </div>
@@ -111,8 +112,8 @@
                 <div class="w3-agile1">
             </div>
           </div>	
-          <div class="clear"> </div>
-          <input type="submit" value="Send">  
+          <div class="clear"> </div> --}}
+          <input class="rentIt" type="submit" value="Rent Me!">  
         </form>
       </div>
       <div class="clear"> </div>

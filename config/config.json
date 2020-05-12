@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "ruffio2016",
+    "password": "password",
     "database": "jawsdb",
     "host": "localhost",
     "dialect": "mysql"
