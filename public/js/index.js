@@ -20,12 +20,7 @@ var API = {
       data: JSON.stringify(customer)
     });
   },
-  getExamples: function() {
-    return $.ajax({
-      url: "login",
-      type: "GET"
-    });
-  }
+ 
 };
 
 var handleFormSubmit = function(event) {
@@ -48,18 +43,23 @@ var handleFormSubmit = function(event) {
   });
 };
 
-var Handlecustomers = function() {
-  API.getCustomer().then(function(data) {
-    var $p = $("<p>").text(data.firstName + data.lastName);
-    $returLogin.append($p);
-  });
-};
+
 $(document).ready(function() {
+  $(".return-login").hide();
+
   var checkUserFirstName = localStorage.getItem("customerFirstName");
   var checkUserLastName = localStorage.getItem("customerLastName");
   if (checkUserFirstName && checkUserLastName) {
+
     $("#userName").html(checkUserFirstName + " " + checkUserLastName);
     $(".userForm").hide();
+    $(".return-login").show();
+
+    $("#logout").on("click",()=>{
+      localStorage.clear();
+      $(".return-login").hide();
+      $(".userForm").show();
+    })
   }
   else {
     $LoginBtn.on("click", handleFormSubmit);

@@ -3,10 +3,7 @@ const bcrypt = require("bcryptjs");
 const { Op } = require("sequelize");
 
 module.exports = function (app) {
-  app.get("/members", function (req, res) {
-    console.log('Inside member', req.body);
-    res.render("index", { firstName: req.body.firstName, lastName: req.body.lastName });
-  });
+  
 
   app.post("/members", (req, res) => {
     //console.log('REQ.BODY', req.body);
@@ -20,9 +17,9 @@ module.exports = function (app) {
       }
     })
       .then(function (customer) {
-        // console.log(customer, 'THE CUSTOMER!');
+        
         if (customer) {
-          // console.log("The  email is already taken/Driver license is already taken")
+          
           return res.json({
             userExists: true
           })

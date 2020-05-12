@@ -18,12 +18,7 @@ var API = {
       }
     });
   },
-  getExamples: function() {
-    return $.ajax({
-      url: "members",
-      type: "GET"
-    });
-  }
+  
 };
 
 var handleFormSubmit = function(event) {
@@ -54,10 +49,7 @@ var handleFormSubmit = function(event) {
   };
 
   API.saveCustomer(customer).then(function(apIresponse) {
-    if (apIresponse.userExists) {
-      $("#DivError").show();
-      $("#error").text("Email address /DL are already taken");
-    }
+    
     console.log(apIresponse, "result");
     $("#firstName").val("");
     $("#lastName").val("");
@@ -69,14 +61,9 @@ var handleFormSubmit = function(event) {
   });
 };
 
-var Handlecustomers = function() {
-  API.getCustomer().then(function(data) {
-    var $p = $("<p>").text(data.firstName + data.lastName);
-    $returLogin.append($p);
-  });
-};
+
 
 $(document).ready(function() {
-  $("#DivError").hide();
+ 
   $submitBtn.on("click", handleFormSubmit);
 });

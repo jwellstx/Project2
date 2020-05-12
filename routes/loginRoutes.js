@@ -2,11 +2,7 @@ var db = require("../models");
 const bcrypt = require("bcryptjs");
 
 module.exports = function (app) {
-    app.get("/login", function (req, res) {
-        console.log('Inside Login', req.body);
-        // res.render("index", { firstName: req.body.firstName, lastName :req.body.lastName });*/
-        // res.send("hola")
-    });
+   
 
     app.post("/login", (req, res) => {
         db.Customer.findOne({
