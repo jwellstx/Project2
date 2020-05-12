@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "utcc2011",
+    "password": "Mlpftw13!",
     "database": "jawsdb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "utcc2011",
+    "password": "Mlpftw13!",
     "database": "jawsdb",
     "host": "localhost",
     "dialect": "mysql",
