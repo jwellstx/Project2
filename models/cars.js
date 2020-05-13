@@ -44,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Cars.associate = models => {
-    Cars.belongsTo(models.Transaction, {
+    Cars.hasOne(models.Transaction, {
       // foreignKey: {
       //   allowNull: false
       // }

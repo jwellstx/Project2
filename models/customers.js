@@ -59,7 +59,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Customer.associate = models => {
-    Customer.belongsTo(models.Transaction, {
+    Customer.hasOne(models.Transaction, {
       // foreignKey: {
       //   allowNull: false
       // }
