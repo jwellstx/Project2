@@ -2,18 +2,11 @@ module.exports = function(sequelize, DataTypes) {
   var Transaction = sequelize.define("Transaction", {
     transactionDate: {
       type: DataTypes.DATE,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-        isDate: true
-      }
+      defaultValue: sequelize.fn("NOW")
     },
     rentalDate: {
       type: DataTypes.DATE,
-      allowNull: false,
-      validate: {
-        isDate: true
-      }
+      defaultValue: sequelize.fn("NOW")
     },
     rentalStatus: {
       type: DataTypes.BOOLEAN,

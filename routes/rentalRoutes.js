@@ -1,6 +1,4 @@
 var db = require("../models");
-var Sequelize = require('sequelize');
-const Op = Sequelize.Op;
 
 module.exports = function(app) {
   // Get all examples
@@ -16,7 +14,8 @@ module.exports = function(app) {
   app.post("/rent", function(req, res) {
     db.Transaction.count({
       where: {
-        [Op.and] : [{rentalStatus: "rented"}, {carId: req.body.CarId}]
+        rentalStatus: "1",
+        carId: req.body.CarId
       }
     }).then(count => {
       if (count > 0) {
