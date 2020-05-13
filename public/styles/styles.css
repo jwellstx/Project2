@@ -253,7 +253,10 @@ label.rating {
     float: left;
     width: 50%;
 }
-
+/*-----error-----*/
+.btn-default{
+	margin-bottom: 10px;
+}
 /*--responsive--*/
 @media(max-width: 1680px){
 	.copyw3-agile {
