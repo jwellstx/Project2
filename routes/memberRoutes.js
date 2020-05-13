@@ -4,7 +4,7 @@ const { Op } = require("sequelize");
 
 module.exports = function (app) {
   app.post("/members", (req, res) => {
-    //console.log('REQ.BODY', req.body);
+    console.log('REQ.BODY', req.body);
     db.Customer.findOne({
       where: {
         [Op.or]: [{

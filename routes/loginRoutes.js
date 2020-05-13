@@ -7,30 +7,29 @@ module.exports = function (app) {
     app.post("/login", (req, res) => {
         db.Customer.findOne({
             where: {
-                email: email.req.body
+                email: req.body.email
             }
         }).then(customer => {
-            console.log(customer, 'THE CUSTOMER!');
+           // console.log(customer, 'THE CUSTOMER!');
             if (customer) {
-                var existPassword = bcrypt.compareSync(req.body.password, customer.password);
+                var correctPsw = bcrypt.compareSync(req.body.password, customer.password);
 
-                if (existPassword) {
+                if (correctPsw) {
                     var customerMatch = {
                         firstName: customer.firstName,
-                        lastName: customer.LastName,
+                        lastName: customer.lastName,
                         CorrectEmail: true,
                         existPassword: true
                     }
-                    res.json({ customerMatch })
+                    return   res.json({ customerMatch });
+
                 } else {
-                    res.json({
-                        CorrectPassword: false
-                    });
+                    return    res.json({CorrectPassword: false });
                 }
-            } else {
-                res.json({
-                    CorrectEmail: false
-                });  
+
+                } else {
+                   
+                    return    res.json({ CorrectEmail: false });  
             }
         });
     });

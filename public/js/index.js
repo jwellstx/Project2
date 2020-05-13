@@ -34,7 +34,7 @@ $(".rentIt").on("click", function() {
 console.log("In Login Account!");
 
 var $LoginBtn = $("#login");
-var $returLogin = $(".return-login");
+
 var API = {
   saveCustomer: function(customer) {
     return $.ajax({
@@ -43,7 +43,13 @@ var API = {
       },
       type: "POST",
       url: "login",
-      data: JSON.stringify(customer)
+      data: JSON.stringify(customer),
+      success: (data) => {
+               
+        localStorage.setItem("customerFirstName", customer.firstName);
+        localStorage.setItem("customerLastName", customer.lastName);
+        window.location.assign("/");
+      }
     });
   },
  
@@ -60,19 +66,26 @@ var handleFormSubmit = function(event) {
       .val()
       .trim()
   };
-
-  API.saveCustomer(customer).then(function(apIresponse) {
-    console.log(apIresponse, "result");
-
-    $("#email").val("");
-    $("#password").val("");
-  });
+  
+  if($("#email").val()== "" || $("#password").val()==0 ){
+    $("#DivError").show();
+    $("#error").text("Must enter your information")
+   
+  }else{
+    API.saveCustomer(customer).then(function(apIresponse) {
+      console.log(apIresponse, "result");
+  
+      $("#email").val("");
+      $("#password").val("");
+    });
+    
+  }
+  
 };
-
 
 $(document).ready(function() {
   $(".return-login").hide();
-
+  $("#DivError").hide();
   var checkUserFirstName = localStorage.getItem("customerFirstName");
   var checkUserLastName = localStorage.getItem("customerLastName");
   var checkCustomerID = localStorage.getItem("customerID");
