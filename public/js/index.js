@@ -23,9 +23,16 @@ $(".rentMe").on("click", function (e) {
   }
 });
 
+$("#return").on("click", (e) => {
+  // this function is to direct the user to their return page
+  e.preventDefault();
+  var customerId = localStorage.getItem("customerID");
+  window.location.assign("/return?id=" + customerId);
+});
+
 console.log("In Login Account!");
 
-$("#rentIt").on("click", function(e) {
+$("#myModal").on("click", "#rentIt", function(e) {
   e.preventDefault();
 
   var transaction = {

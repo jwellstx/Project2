@@ -1,0 +1,10 @@
+<div id="profileBody" style="color: white">
+    <ul>
+        {{#each rentals}}
+        <li><button type="submit" id="returnCar" value="{{id}}">Return this car!</button>
+            {{Car.make}} {{Car.model}} {{Car.licensePlate}} rented on: {{createdAt}} for customer: 
+            {{Customer.firstName}} {{Customer.lastName}}</li>
+        {{/each}}
+    </ul>
+</div>
+<script src="js/profileAccount.js"></script>
