@@ -9,6 +9,7 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
+<<<<<<< HEAD
       url: "members",
       data: JSON.stringify(customer),
       success: (data) => {
@@ -18,9 +19,12 @@ var API = {
         window.location.assign("/");
               
       }
+=======
+      url: "/members",
+      data: JSON.stringify(customer)
+>>>>>>> 9ac495c26dea47cd455a366a9dc80f2bec8847a7
     });
-  },
-  
+  }
 };
 
 var handleFormSubmit = function(event) {
@@ -49,6 +53,7 @@ var handleFormSubmit = function(event) {
       .val()
       .trim()
   };
+<<<<<<< HEAD
   
     if(validate()){
       API.saveCustomer(customer).then(function(apIresponse) {
@@ -85,5 +90,25 @@ function validate(){
 
 $(document).ready(function() {
   $("#DivError").hide();
+=======
+
+  API.saveCustomer(customer).then(function(apIresponse) {
+    localStorage.setItem("customerFirstName", apIresponse.firstName);
+    localStorage.setItem("customerLastName", apIresponse.lastName);
+    localStorage.setItem("customerID", apIresponse.id);
+    window.location.assign("/");
+    // console.log(apIresponse, "result");
+    $("#firstName").val("");
+    $("#lastName").val("");
+    $("#email").val("");
+    $("#password").val("");
+    $("#phone").val("");
+    $("#driversLicenseNo").val("");
+    $("#driversLicenseState").val("");
+  });
+};
+
+$(document).ready(function() {
+>>>>>>> 9ac495c26dea47cd455a366a9dc80f2bec8847a7
   $submitBtn.on("click", handleFormSubmit);
 });

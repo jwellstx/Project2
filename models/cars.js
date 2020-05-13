@@ -1,11 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Cars = sequelize.define("Cars", {
-    carId: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true
-    },
     make: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -15,6 +9,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     model: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        len: [1]
+      }
+    },
+    vehicleType: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -48,5 +50,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
+  Cars.associate = models => {
+    Cars.hasOne(models.Transaction, {
+      // foreignKey: {
+      //   allowNull: false
+      // }
+    });
+  };
+
   return Cars;
 };
