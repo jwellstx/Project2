@@ -1,6 +1,6 @@
 .jumbotron{
   opacity: 1;
-  background-image: url(../img/banner.jpg);
+  background-image: url(../img/Lykan.webp);
   height: 700px;
   background-size: cover;
   
@@ -16,6 +16,12 @@ color: #FFFFFF;
 text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
 font-family: 'Faster One', cursive;
 opacity: 1;
+-moz-transform: translate(0px, -90px) skew(0deg, -10deg);
+-webkit-transform: translate(0px, -90px) skew(0deg, -10deg);
+-o-transform: translate(0px, -90px) skew(0deg, -10deg);
+-ms-transform: translate(0px, -90px) skew(0deg, -10deg);
+transform: translate(0px, -90px) skew(0deg, -10deg);
+
 }
 
 .card-img-top{
