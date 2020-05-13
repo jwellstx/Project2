@@ -43,7 +43,7 @@ module.exports = function (app) {
       }).then(rows => {
         console.log(rows);
         if (rows.length !== 0) {
-          res.render("profileAccount", { rentals: rows.map(rental => rental.toJSON()) });
+          res.render("return", { rentals: rows.map(rental => rental.toJSON()) });
         }
         else {
           // customer has no cars to return
@@ -58,7 +58,6 @@ module.exports = function (app) {
   });
 
   app.put("/return", (req, res) => {
-    console.log(req.body.transactionId);
     db.Transaction.update({
       rentalStatus: "0"
     }, {

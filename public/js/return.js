@@ -3,7 +3,6 @@ $(document).ready(function() {
       // need event delegation for this function
     e.preventDefault();
     var transactionId = $(this).val();
-    console.log(transactionId);
 
     $.ajax({
       method: "PUT",
