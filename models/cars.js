@@ -16,6 +16,14 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    vehicleType: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        len: [1]
+      }
+    },
     color: {
       type: DataTypes.STRING,
       allowNull: false,
