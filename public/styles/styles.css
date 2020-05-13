@@ -5,6 +5,9 @@
   background-size: cover;
   
 }
+body{
+  background-color: #363434;
+}
 
 .title{
 color: #FFFFFF;
@@ -22,6 +25,7 @@ opacity: 1;
 .card{
   float: left;
   margin-top: 30px;
+  background-color: #62929a;
 }
 
 .card-img-top{
@@ -32,6 +36,9 @@ opacity: 1;
   max-width: 246px;
   max-height: 24px;
 }
+h2{
+  font-size: 98px;
+}
 section{
     margin : 20px auto;
     background-color: white;
@@ -39,6 +46,11 @@ section{
     box-shadow: 0px 5px 15px 0px;
     text-align: center;
 }
+
+.rentMe{
+  background-color: #efecec;
+  color: black;
+} 
 
 #account{
  background-color: #f8993b;
