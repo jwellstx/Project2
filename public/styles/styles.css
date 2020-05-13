@@ -33,9 +33,22 @@ opacity: 1;
   max-width: 286px;
 }
 .card-title{
-  max-width: 246px;
-  max-height: 24px;
+    max-width: 246px;
+    max-height: 24px;
+    font-family: 'Bad Script', cursive;
 }
+
+.card-text{
+	font-family: 'Fredoka One', cursive;
+}
+
+.rentMe{
+	font-family: 'Caveat', cursive;
+	background-color: lightslategrey;
+	color: black;
+}
+
+
 h2{
   font-size: 98px;
 }
@@ -47,10 +60,7 @@ section{
     text-align: center;
 }
 
-.rentMe{
-  background-color: #efecec;
-  color: black;
-} 
+
 
 #account{
  background-color: #f8993b;

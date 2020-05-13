@@ -41,11 +41,11 @@
     </div>
 
     <div class="col-md-9">
-      <div style="display: flex; flex-direction:column">
+      <div>
         <p id="vehicleType">Cars</p>
         <container>
           {{#each cars}}
-          <div id={{model}} class="card" style="width: 18rem;">
+          <div id={{model}} class="card" style="width: 288px; height: 344px;">
             <img src="/img/{{model}}.jpg" class="card-img-top" alt={{model}}>
             <div class="card-body">
               <h5 class="card-title">
@@ -84,44 +84,7 @@
               {{!-- customer id needed for post to transactions route --}}
               CustomerID: <div id="customerID"></div>
               Price: <div id="carPrice"></div>
-              {{!-- <input type="text"  class="name" name="name" placeholder="Your Name" required="">
-          <input type="email" name="email" placeholder="Enter your Email..." required="">
-          <input type="text"  class="name" name="name" placeholder="Phone Number" required="">
-          <div class="clear"> </div>
-          <br/>
-            <div class="main-row">
-              <select name="country">
-                <option value="none" selected="" disabled="">Select Brand</option>
-                <option value="Job-2">Aston Martin</option>
-                <option value="Job-3">Bentley</option>
-                <option value="Job-4">Ferrari</option>
-                <option value="Job-5">Koenigsegg</option>
-                <option value="Job-6">Lamborghini</option>
-                <option value="Job-6">Mclaren</option>
-                <option value="Job-6">Maserati</option>
-                <option value="Job-6">Mercedes</option>
-                <option value="Job-6">Pagani</option>
-                <option value="Job-6">Porsche</option>
-                <option value="Job-6">Rolls-Royce</option>
-                <option value="Job-6">Exclusive</option>
-              </select>
               
-            </div>
-            <div class="main-row">
-              <select name="country">
-              <option value="none" selected="" disabled="">Type of Vehicle</option>
-              <option value="Job-2">Car</option>
-              <option value="Job-3">SUV</option>
-            </select>
-            <i></i>
-          </div>
-            <br/>
-            <div class="content-wthree2">
-              <div class="grid-w3layouts1">
-                <div class="w3-agile1">
-            </div>
-          </div>	
-          <div class="clear"> </div> --}}
               <input class="rentIt" type="submit" value="Rent Me!">
             </form>
           </div>
