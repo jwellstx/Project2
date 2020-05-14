@@ -32,9 +32,14 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
   float: left;
   margin-top: 30px;
   background-color: #62929a;
-  margin-left: 15px;
+  margin-left: 25px;
 }
-
+.usercard{
+	margin-top: 155px;
+	background-color:#62929a ;
+	border-radius: 4px;
+	
+}
 .card-img-top{
   max-height: 160px;
   max-width: 286px;
@@ -49,7 +54,8 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 .card-text{
 	font-family: 'Lato', sans-serif;
 	color: whitesmoke;
-	font-size: 36px;
+	font-size: 30px;
+	margin-top: 15px;
 }
 
 .rentMe{
@@ -58,35 +64,33 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 	color: black;
 }
 
+.return-login{
+	margin : 20px auto;
+    background-color:#363434;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px;
+	text-align: center;
+	padding: 0px 20px 20px 20px;
+	
+}
 
 h2{
-  font-size: 98px;
+  font-size: 36px;
   color: yellow;
 }
 
 #userName{
 	color: violet;
+	font-size: 40px;
 }
 
-section{
-    margin : 20px auto;
-    background-color:#363434;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px 0px;
-    text-align: center;
-}
-
-.return-login{
-	border: #FFF;
-	border-width: 5px;
-	background-color: yellowgreen;
-}
 
 #vehicleType{
 	color:whitesmoke;
 	font-size: 75px;
 	font-family:'Bad Script', cursive ;
 	font-weight: bolder;
+	margin-right: 175px;
 }
 
 #account{
