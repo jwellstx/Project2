@@ -13,9 +13,9 @@ $(".rentMe").on("click", function (e) {
   var checkCustomerID = localStorage.getItem("customerID");
   if (checkUserFirstName && checkUserLastName && checkCustomerID) {
     $("#userName2").html(checkUserFirstName + " " + checkUserLastName).val(checkUserFirstName + " " + checkUserLastName);
-    $("#customerID").html(checkCustomerID).val(checkCustomerID);
-    $("#carPrice").html(carPrice).val(carPrice);
-    $("#carID").html(carId).val(carId);
+    $("#customerID").html("Customer Id:"+checkCustomerID).val(checkCustomerID);
+    $("#carPrice").html("Price:"+carPrice).val(carPrice);
+    $("#carID").html("Car Id:"+carId).val(carId);
   }
   else {
     e.stopPropagation();  // prevents modal from popping up if not logged in.
