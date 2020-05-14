@@ -1,0 +1,13 @@
+<div class="card">
+<div id="profileBody" style="color: white">
+    <ul>
+        {{#each rentals}}
+        <li><button class="btn btn-danger" type="button" id="returnCar" value="{{id}}">Return this car!</button>
+            <div>{{Car.make}} {{Car.model}} {{Car.licensePlate}}</div> rented on: {{createdAt}} for customer: 
+            {{Customer.firstName}} {{Customer.lastName}}</li>
+        </br>
+        {{/each}}
+    </ul>
+</div>
+</div>
+<script src="js/return.js"></script>

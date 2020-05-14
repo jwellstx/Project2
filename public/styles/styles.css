@@ -1,3 +1,441 @@
-.list-group-item {
-  line-height: 2.5;
+.jumbotron{
+  opacity: 1;
+  background-image: url(../img/Lykan.webp);
+  height: 700px;
+  background-size: cover;
+  
 }
+body{
+  background-color: #363434;
+}
+
+.title{
+color: #FFFFFF;
+font-size: 200px;
+color: #FFFFFF;
+text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+font-family: 'Faster One', cursive;
+opacity: 1;
+-moz-transform: translate(0px, -90px) skew(0deg, -10deg);
+-webkit-transform: translate(0px, -90px) skew(0deg, -10deg);
+-o-transform: translate(0px, -90px) skew(0deg, -10deg);
+-ms-transform: translate(0px, -90px) skew(0deg, -10deg);
+transform: translate(0px, -90px) skew(0deg, -10deg);
+
+}
+
+.card-img-top{
+  border: black;
+  border-width: 5px;
+}
+.card{
+  float: left;
+  margin-top: 30px;
+  background-color: #62929a;
+  margin-left: 25px;
+}
+.usercard{
+	margin-top: 155px;
+	background-color:#62929a ;
+	border-radius: 4px;
+	
+}
+.card-img-top{
+  max-height: 160px;
+  max-width: 286px;
+}
+.card-title{
+    max-width: 246px;
+    max-height: 24px;
+	font-family: 'Bad Script', cursive;
+	color: whitesmoke;
+}
+
+.card-text{
+	font-family: 'Lato', sans-serif;
+	color: whitesmoke;
+	font-size: 30px;
+	margin-top: 15px;
+}
+
+.rentMe{
+	font-family: 'Caveat', cursive;
+	background-color: lightslategrey;
+	color: black;
+	border-color: black;
+}
+
+.return-login{
+	margin : 158px 20px 20px 40px;
+    background-color:#62929a;
+    border-radius: .25rem;
+    box-shadow: 0px 5px 15px 0px;
+	text-align: center;
+	padding: 0px 20px 20px 20px;
+	border: black;
+	
+}
+
+h2{
+  font-size: 60px;
+  color: yellow;
+  font-family: 'Satisfy', cursive;
+}
+
+#userName{
+	color: violet;
+	font-size: 40px;
+}
+
+
+#vehicleType{
+	color:whitesmoke;
+	font-size: 75px;
+	font-family:'Bad Script', cursive ;
+	font-weight: bolder;
+	margin-right: 175px;
+}
+
+#account{
+ background-color:#62929a ;
+ opacity: 0.9;
+  
+}
+.memberForm{
+	color:whitesmoke ;
+}
+
+legend{
+	color: whitesmoke;
+}
+
+.welcomeBanner{
+	height: 640px;
+	margin-bottom: 25px;
+}
+
+.list-unstyled{
+	font-size: 20px;
+}
+
+#error{
+  margin-top: 10px;
+}
+.info, form,h2{
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*-- end reset --*/
+body {
+    font-family: 'Reem Kufi', sans-serif;
+    text-align: center;
+}
+
+
+/*-- main --*/
+
+
+form{
+	position:relative;
+}
+
+.grid-w3layouts1 ul li, .grid-w3layouts2 ul li {
+    color: #fff;
+    display: block;
+    position: relative;
+    height: 40px;
+    float: left;
+    width: 50%;
+}
+ul li input[type=radio]{
+	position: absolute;
+	visibility: hidden;
+}
+ul li label {
+    display: inline-block;
+    position: relative;
+    font-weight: 300;
+    text-transform: capitalize;
+    font-size: 1em;
+    padding: 1.2em 0;
+    margin: .7em 0;
+    z-index: 9;
+	color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+    -webkit-transition: all 0.25s linear;
+}
+ul li:hover label{
+	color: #fff;
+}
+ul li .check{
+	display: block;
+    position: absolute;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    height: 14px;
+    width: 14px;
+    top: 33px;
+    left: 20px;
+    z-index: 5;
+    transition: border .25s linear;
+    -webkit-transition: border .25s linear;
+}
+ul li:hover .check {
+	border: 2px solid #FFFFFF;
+}
+ul li .check::before {
+	display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 10px;
+    width: 10px;
+    top: 2px;
+    left: 2px;
+    margin: auto;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+}
+
+.grid-w3layouts2 {
+    margin-top: 3em;
+}
+/*-- /radio button --*/ 
+select, .tickets input[type="number"] {
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: justify;
+    outline: none;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: normal;
+    background-color: rgba(0, 0, 0, 0.56);
+    height: 40px;
+    padding: 0 15px;
+    width: 96%;
+    margin-bottom: 16px;
+    margin-top: 1.2em;
+}
+
+.main-row {
+    float: left;
+    width: 50%;
+}
+/*-----error-----*/
+.btn-default{
+	margin-bottom: 10px;
+}
+/*--responsive--*/
+@media(max-width: 1680px){
+	.copyw3-agile {
+		padding: 5.2em 0 8em;
+	}
+}
+@media(max-width: 1600px){
+	h1 {
+		padding: .4em 0;
+	}
+	.copyw3-agile { 
+		padding:3em 0 4em;
+	}
+}
+@media(max-width: 1440px){
+	h1 {
+		padding: .3em 0 0;
+	}
+	.copyw3-agile {
+		padding: 1em 0 1.5em;
+	}
+	.main-agilerow {
+		width: 38%;
+	}
+}
+@media(max-width: 1366px){
+	h1 {
+		font-size: 3.8em;
+	}
+}
+@media(max-width: 1280px){
+	.main-agilerow {
+		width: 41%;
+	}
+}
+@media(max-width: 1080px){
+	h1 {
+		font-size: 3.5em;
+		letter-spacing: 3px;
+	}
+	.main-agilerow {
+		width: 49%;
+	}
+}
+@media(max-width: 1050px){
+
+}
+@media(max-width: 1024px){
+	.main-agilerow {
+		width: 51%;
+	}
+}
+@media(max-width: 991px){
+	.main-agilerow {
+		width: 53%;
+	}
+}
+@media(max-width: 900px){
+	.main-agilerow {
+		width: 57%;
+	}
+}
+@media(max-width: 800px){
+	.main-agilerow {
+		width: 65%;
+	}
+}
+@media(max-width: 768px){
+	.copyw3-agile {
+		padding: 2em 0 9.85em;
+	}
+	h1 {
+		padding: .4em 0 0;
+	}
+	.main-agilerow {
+		width: 69%;
+	}
+}
+@media(max-width: 736px){
+	h1 {
+		padding: .3em 0 0;
+	}
+	.copyw3-agile {
+		padding: 1em 0 1.5em;
+	}
+	.main-agilerow {
+		width: 72%;
+	}
+}
+@media(max-width: 667px){
+	h1 {
+		font-size: 3em;
+	}
+	
+	ul li .check {
+		top: 27px;
+		left: 12px;
+	}
+	ul li label {
+		font-size: .9em;
+	}
+}
+@media(max-width: 640px){
+	.main-agilerow {
+		width: 76%;
+	}
+	.copyw3-agile p {
+		letter-spacing: 1px;
+	}
+}
+@media(max-width: 600px){
+	.main-agilerow {
+		width: 80%;
+	}
+}
+@media(max-width: 568px){
+	.main-agilerow {
+		width: 85%;
+	}
+	
+}
+@media(max-width: 480px){
+	h1 {
+		font-size: 2.7em;
+	}
+	select, .tickets input[type="number"] {
+		font-size: 13px;
+		padding: 0 6px;
+		width: 98%;
+	}
+	
+	ul li .check {
+		left: 4px;
+	}
+	
+}
+@media(max-width: 440px){
+	.main-agilerow {
+		width: 91%;
+	}
+}
+@media(max-width: 414px){
+	ul li .check {
+		left: 4px;
+		top: 26px;
+		height: 12px;
+		width: 12px;
+	}
+	ul li label {
+		font-size: .8em;
+	}
+	
+}
+@media(max-width: 384px){
+	h1 {
+		font-size: 2.5em;
+		letter-spacing: 1px;
+	}
+	
+	ul li label {
+		letter-spacing: 0px;
+	}
+}
+@media(max-width: 375px){
+
+}
+@media(max-width: 320px){
+	h1 {
+		font-size: 2.1em;
+	}
+
+	.main-row {
+		float: none;
+		width: 100%;
+	}
+	
+	select, .tickets input[type="number"] {
+		font-size: 12px;
+		padding: 0 9px;
+		width: 98.5%;
+		margin-bottom: 0;
+	}
+	ul li .check {
+		left: 1px;
+		top: 23px;
+		height: 8px;
+		width: 8px;
+	}
+	
+	ul li label {
+		font-size: .74em;
+		padding: 1em 0;
+	}
+	
+	
+}
+/* end rental info modal/*

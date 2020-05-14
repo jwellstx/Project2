@@ -1,99 +1,141 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+$(".rentMe").on("click", function (e) {
+  var carMake = $(this).attr("data-make");
+  var carModel = $(this).attr("data-model");
+  var carId = $(this).attr("data-id");
+  var carPrice = $(this).attr("data-price");
+  $(".modal-title").text(carMake + " " + carModel);
+  $(".rentalCar").attr("src", "/img/" + carModel + ".jpg");
+  $(".rentIt").attr("data-id", carId);
+  $(".rentIt").attr("data-price", carPrice);
 
-// The API object contains methods for each kind of request we'll make
+  var checkUserFirstName = localStorage.getItem("customerFirstName");
+  var checkUserLastName = localStorage.getItem("customerLastName");
+  var checkCustomerID = localStorage.getItem("customerID");
+  if (checkUserFirstName && checkUserLastName && checkCustomerID) {
+    $("#userName2").html(checkUserFirstName + " " + checkUserLastName).val(checkUserFirstName + " " + checkUserLastName);
+    $("#customerID").html("Customer Id:"+checkCustomerID).val(checkCustomerID);
+    $("#carPrice").html("Price:"+carPrice).val(carPrice);
+    $("#carID").html("Car Id:"+carId).val(carId);
+  }
+  else {
+    e.stopPropagation();  // prevents modal from popping up if not logged in.
+    alert("You are either not logged on or a registered user! Please login/register to continue!");
+  }
+});
+
+$("#return").on("click", (e) => {
+  // this function is to direct the user to their return page
+  e.preventDefault();
+  var customerId = localStorage.getItem("customerID");
+  window.location.assign("/return?id=" + customerId);
+});
+
+console.log("In Login Account!");
+
+$("#myModal").on("click", "#rentIt", function(e) {
+  e.preventDefault();
+
+  var transaction = {
+    rentalStatus: "1",
+    pricePaid: $("#carPrice")
+      .val()
+      .trim(),
+    CustomerId: $("#customerID")
+      .val()
+      .trim(),
+    CarId: $("#carID")
+      .val()
+      .trim()
+  };
+
+  API.createTransaction(transaction).then(function(apIresponse) {
+    console.log(apIresponse);
+    if (apIresponse === 1) alert("Sorry, car is already rented!!");
+    else {
+      // why is this never hit?
+      alert("Succesfully rented!!");
+      // $("#myModal").toggle();
+    }
+  });
+
+})
+
+var $LoginBtn = $("#login");
+
 var API = {
-  saveExample: function(example) {
+  returningCustomer: function (customer) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "login",
+      data: JSON.stringify(customer)
     });
   },
-  getExamples: function() {
+  createTransaction: (transaction) => {
     return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "/rent",
+      data: JSON.stringify(transaction)
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+var handleFormSubmit = function (event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var customer = {
+    email: $("#email")
+      .val()
+      .trim(),
+    password: $("#password")
+      .val()
+      .trim()
   };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
+  
+  if($("#email").val()== "" || $("#password").val()==0 ){
+    $("#DivError").show();
+    $("#error").text("Must enter your information")
+   
+  }else{
+    API.returningCustomer(customer).then(function(apIresponse) {
+      console.log(apIresponse, "result");
+      localStorage.setItem("customerFirstName", apIresponse.customerMatch.firstName);
+      localStorage.setItem("customerLastName", apIresponse.customerMatch.lastName);
+      localStorage.setItem("customerID", apIresponse.customerMatch.customerId)
+      window.location.assign("/");
+  
+      $("#email").val("");
+      $("#password").val("");
+    });
+    
   }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
+  
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+$(document).ready(function() {
+  $(".return-login").hide();
+  $("#DivError").hide();
+  var checkUserFirstName = localStorage.getItem("customerFirstName");
+  var checkUserLastName = localStorage.getItem("customerLastName");
+  var checkCustomerID = localStorage.getItem("customerID");
+  if (checkUserFirstName && checkUserLastName && checkCustomerID) {
+    $("#userName").html(checkUserFirstName + " " + checkUserLastName);
+    $(".userForm").hide();
+    $(".return-login").show();
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
-
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+    $("#logout").on("click", () => {
+      localStorage.clear();
+      window.location.assign("/");
+      $(".return-login").hide();
+      $(".userForm").show();
+    })
+  }
+  else {
+    $LoginBtn.on("click", handleFormSubmit);
+  }
+});

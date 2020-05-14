@@ -1,33 +1,102 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+<div class="jumbotron">
+  <h1 class="title">Hot Wheels</h1>
+</div>
+<div>
+  <div class="row">
+    <div class="col-md-2 mx-auto userForm">
+      <div class="usercard text-center">
+        <div class="card-body">
+          <form action="/login" method="POST">
+            <div id="DivError">
+              <button type="button" class="btn btn-default" id="error"></button>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" id="email" class="form-control" placeholder="Enter E-mail">
+            </div>
+            <div class="form-group">
+              <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password">
+            </div>
+            <div class="form-group">
+              <button id="login" class="btn btn-danger btn-block ">
+                Login
+              </button>
+            </div>
+            <div class="form-group">
+              <p>Don't have a member account yet?</p>
+              <a href="/member" class="btn btn-success">Join US</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+ 
+
+  
+    <div class="return-login" style="height: max-content;">
+      <h2>Welcome</h2>
+      <p>
+      <div id="userName"></div>
+      </p>
+      <button class="btn btn-success" type="button" id="return">Return Cars</button>
+      <button class="btn btn-danger " type="button" id="logout">Logout</button>
+    </div>
+        
+    
+
+  
+
+    <div class="col-md-9">
+      <div>
+        <p id="vehicleType">All Vehicles</p>
+        <container>
+          {{#each cars}}
+          <div id={{model}} class="card" style="width: 288px; height: 344px;">
+            <img src="/img/{{model}}.jpg" class="card-img-top" alt={{model}}>
+            <div class="card-body">
+              <h5 class="card-title">
+                <p><span id="makeFont">{{make}}<span> <span id="modelFont">{{model}}</span></p>
+              </h5>
+              <br>
+              <p class="card-text">${{pricePerDay}} per day</p>
+              <a href="#" data-id="{{id}}" data-price="{{pricePerDay}}" data-make="{{make}}" data-model="{{model}}"
+                class="rentMe btn btn-primary" data-toggle="modal" data-target="#myModal">Rent Me!</a>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
           {{/each}}
-        </ul>
+        </container>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img class="rentalCar" src="#">
+        <h4 class="modal-title">{{make}} {{model}}</h4>
+      </div>
+      <div class="modal-body">
+        <!--rental info goes below -->
+       <div id="userName2"></div>
+         <div id="customerID"></div>
+         <div id="carPrice"></div>
+        <div id="carID"></div>
+        <button type="button" id="rentIt" class="btn btn-default">Rent Me!</button>
+        <!-- end rental info-->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="/js/index.js"></script>
