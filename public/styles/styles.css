@@ -32,6 +32,7 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
   float: left;
   margin-top: 30px;
   background-color: #62929a;
+  margin-left: 15px;
 }
 
 .card-img-top{
@@ -41,11 +42,14 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 .card-title{
     max-width: 246px;
     max-height: 24px;
-    font-family: 'Bad Script', cursive;
+	font-family: 'Bad Script', cursive;
+	color: whitesmoke;
 }
 
 .card-text{
-	font-family: 'Fredoka One', cursive;
+	font-family: 'Lato', sans-serif;
+	color: whitesmoke;
+	font-size: 36px;
 }
 
 .rentMe{
@@ -57,22 +61,56 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 
 h2{
   font-size: 98px;
+  color: yellow;
 }
+
+#userName{
+	color: violet;
+}
+
 section{
     margin : 20px auto;
-    background-color: white;
+    background-color:#363434;
     border-radius: 5px;
     box-shadow: 0px 5px 15px 0px;
     text-align: center;
 }
 
+.return-login{
+	border: #FFF;
+	border-width: 5px;
+	background-color: yellowgreen;
+}
 
+#vehicleType{
+	color:whitesmoke;
+	font-size: 75px;
+	font-family:'Bad Script', cursive ;
+	font-weight: bolder;
+}
 
 #account{
- background-color: #f8993b;
+ background-color:#62929a ;
  opacity: 0.9;
   
 }
+.memberForm{
+	color:whitesmoke ;
+}
+
+legend{
+	color: whitesmoke;
+}
+
+.welcomeBanner{
+	height: 640px;
+	margin-bottom: 25px;
+}
+
+.list-unstyled{
+	font-size: 20px;
+}
+
 #error{
   margin-top: 10px;
 }
@@ -116,74 +154,10 @@ body {
     margin: 1.5em auto;
 }
 
-
-.sub-w3lsright {
-    background-color:rgba(14, 14, 14, 0.76);
-    padding: 2em 3em; 
-    text-align: center;
-	-webkit-box-shadow: 1px 4px 23px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 1px 4px 23px 0px rgba(0,0,0,0.75);
-	box-shadow: 1px 4px 23px 0px rgba(0,0,0,0.75);
-}
-
-.sub-w3lsright h2 {
-    font-size: 2em;
-    letter-spacing: 2px;
-    color: #fff;
-    padding-bottom: 1em;
-}
-.sub-w3lsright p {
-    font-size: 1.1em;
-    color: #999;
-    margin: 2em 0 3em;
-    letter-spacing: 2px;
-    line-height: 2;
-}
-.sub-w3lsright input[type="email"], .sub-w3lsright input[type="text"]{
-    width: 91.3%;
-    padding: 0.8em 1em;
-    font-size: 0.9em;
-    color: #fff;
-    outline: none;
-    border: 1px solid #fff;
-    background: none;
-    -webkit-appearance: none;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    transition: 0.5s all;
-	letter-spacing: 1px;
-	font-family: 'Reem Kufi', sans-serif;
-}
-.sub-w3lsright input[type="email"] {
-    margin: 1.2em 0;
-}
 form{
 	position:relative;
 }
-.sub-w3lsright input[type="submit"] {
-    color: #fff;
-    font-size: .9em;
-    outline: none;
-    padding: .7em 3em;
-    border: none;
-    -webkit-appearance: none;
-    background: #f74545;
-    cursor: pointer;
-    position: relative;
-    margin-top: 3em;
-    letter-spacing: 2px;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    transition: 0.5s all;
-    font-family: 'Reem Kufi', sans-serif;
-}
-.sub-w3lsright input[type="submit"]:hover { 
-    background: #14d7f5;
-} 
 
-span {
-    color: #14d7f5;
-}
 .grid-w3layouts1 ul li, .grid-w3layouts2 ul li {
     color: #fff;
     display: block;
@@ -325,9 +299,6 @@ label.rating {
 		font-size: 3.5em;
 		letter-spacing: 3px;
 	}
-	.sub-w3lsright h2 {
-		font-size: 1.8em;
-	}
 	.main-agilerow {
 		width: 49%;
 	}
@@ -381,9 +352,7 @@ label.rating {
 	h1 {
 		font-size: 3em;
 	}
-	.sub-w3lsright h2 {
-		font-size: 1.6em;
-	}
+	
 	ul li .check {
 		top: 27px;
 		left: 12px;
@@ -415,22 +384,12 @@ label.rating {
 	h1 {
 		font-size: 2.7em;
 	}
-	.sub-w3lsright h2 {
-		font-size: 1.5em;
-	}
-	.sub-w3lsright input[type="email"], .sub-w3lsright input[type="text"] {
-		font-size: .85em;
-		padding: .75em 1em;
-		width: 91%;
-	}
 	select, .tickets input[type="number"] {
 		font-size: 13px;
 		padding: 0 6px;
 		width: 98%;
 	}
-	.sub-w3lsright {
-		padding: 2em 2em;
-	}
+	
 	ul li .check {
 		left: 4px;
 	}
@@ -451,50 +410,31 @@ label.rating {
 	ul li label {
 		font-size: .8em;
 	}
-	.sub-w3lsright input[type="email"], .sub-w3lsright input[type="text"] {
-		width: 90%;
-	}
+	
 }
 @media(max-width: 384px){
 	h1 {
 		font-size: 2.5em;
 		letter-spacing: 1px;
 	}
-	.sub-w3lsright h2 {
-		font-size: 1.4em;
-	}
+	
 	ul li label {
 		letter-spacing: 0px;
 	}
-	
-	.sub-w3lsright input[type="email"], .sub-w3lsright input[type="text"] {
-		width: 89%;
-	}
 }
 @media(max-width: 375px){
-	.sub-w3lsright h2 {
-		letter-spacing: 1px;
-	}
+
 }
 @media(max-width: 320px){
 	h1 {
 		font-size: 2.1em;
 	}
-	.sub-w3lsright h2 {
-		font-size: 1.2em;
-	}
+
 	.main-row {
 		float: none;
 		width: 100%;
 	}
-	.sub-w3lsright input[type="email"], .sub-w3lsright input[type="text"] {
-		width: 87%;
-		font-size: .8em;
-		padding: .7em 1em;
-	}
-	.sub-w3lsright {
-		padding: 2em 1.5em;
-	}
+	
 	select, .tickets input[type="number"] {
 		font-size: 12px;
 		padding: 0 9px;
@@ -515,11 +455,7 @@ label.rating {
 		font-size: .74em;
 		padding: 1em 0;
 	}
-	.sub-w3lsright input[type="submit"] {
-		font-size: .8em;
-		padding: .65em 2.5em;
-		margin-top: 2em;
-	}
+	
 	
 }
 /* end rental info modal/*
