@@ -1,4 +1,4 @@
-<container class="rental">
+<container class="rental profileBody">
           {{#each rentals}}
           <div id={{Car.model}} class="card" style="width: 288px; height: 500px">
             <img src="/img/{{Car.model}}.jpg" class="card-img-top" alt={{model}}>
@@ -16,4 +16,6 @@
           </div>
           {{/each}}
         </container>
+
+        <span><button class="btn btn-danger" type="button" id="homeBtn">Back to Cars</button></span>
 <script src="js/return.js"></script>
