@@ -136,4 +136,12 @@ $(document).ready(function () {
 
     $(".anchor").on("click", "#login", handleFormSubmit);
   }
+
+  
+});
+$(".anchor").on("click", "#filterSubmit", (e) => {
+  e.preventDefault();
+  console.log($("#vehicle").val());
+  console.log($("#color").val());
+  console.log($("#priceRange").val());
 });

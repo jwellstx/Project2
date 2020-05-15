@@ -45,46 +45,39 @@
       <div class="filterBox" style="background-color: #62929a;">
         <h3>Filter</h3>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Vehicle Type
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Car</a>
-            <a class="dropdown-item" href="#">SUV</a>
-            <a class="dropdown-item" href="#">Exclusive</a>
-          </div>
+          <select id="vehicle">
+          <option selected>Vehicle Type</option>
+          <option value="Car">Car</option>
+          <option value="SUV">SUV</option>
+          <option value="Exclusive">Exclusive</option>
+          </select>
         </div>
         </br>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Color
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Red</a>
-            <a class="dropdown-item" href="#">Green</a>
-            <a class="dropdown-item" href="#">Blue</a>
-            <a class="dropdown-item" href="#">Black</a>
-            <a class="dropdown-item" href="#">Orange</a>
-            <a class="dropdown-item" href="#">Other</a>
-          </div>
+          <select id="color"  aria-labelledby="dropdownMenuButton">
+            <option selected>Color</option>
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+            <option value="Black">Black</option>
+            <option value="Orange">Orange</option>
+            <option value="All">All</option>
+          </select>
         </div>
         </br>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Price Range
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Below $500</a>
-            <a class="dropdown-item" href="#">$501 to $999</a>
-            <a class="dropdown-item" href="#">$1000 to $2999</a>
-            <a class="dropdown-item" href="#">$3000 to $6999</a>
-            <a class="dropdown-item" href="#">Above $7000</a>
-          </div>
+          <select id="priceRange"  aria-labelledby="dropdownMenuButton">
+            <option selected>Price Range</option>
+            <option value="1">Below $500</option>
+            <option value="2">$501 to $999</option>
+            <option value="3">$1000 to $2999</option>
+            <option value="4">$3000 to $6999</option>
+            <option value="5">Above $7000</option>
+          </select>
         </div>
         </br>
+        <button class="btn btn-success" id="filterSubmit" >Submit</button>
+      </br>
       </div>
     </div>
 
@@ -136,6 +129,7 @@
     </div>
   </div>
 </div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

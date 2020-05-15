@@ -76,6 +76,10 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 	
 }
 
+#filterSubmit{
+	margin-bottom: 20px;
+}
+
 .filterBox{
 	width: 304.57px;
 	border-radius: .25rem;
@@ -83,6 +87,10 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 
 h3{
 	padding-top: 20px;
+	color: whitesmoke;
+	font-family:'Bad Script', cursive;
+	font-size: 60px;
+	font-weight: bold;
 }
 
 h2{
@@ -99,9 +107,9 @@ h2{
 	font-size: 40px;
 }
 
-.dropdown-menu{
-	border: black;
-	border-width: 5px;
+#dropdownMenuButton{
+	border-color: black;
+	
 }
 
 #vehicleType{
@@ -187,20 +195,7 @@ ul li input[type=radio]{
 	position: absolute;
 	visibility: hidden;
 }
-ul li label {
-    display: inline-block;
-    position: relative;
-    font-weight: 300;
-    text-transform: capitalize;
-    font-size: 1em;
-    padding: 1.2em 0;
-    margin: .7em 0;
-    z-index: 9;
-	color: #fff;
-    letter-spacing: 1px;
-    cursor: pointer;
-    -webkit-transition: all 0.25s linear;
-}
+
 ul li:hover label{
 	color: #fff;
 }
