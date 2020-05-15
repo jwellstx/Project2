@@ -6,7 +6,7 @@
     <div class="col-md-2 mx-auto">
       <div class=" mx-auto userForm">
         <div class="usercard text-center" style="width:max-content;">
-          <div class="card-body" >
+          <div class="card-body">
             <form autocomplete="off">
               <div id="DivError">
                 <button type="button" class="btn btn-default" id="error"></button>
@@ -30,10 +30,9 @@
           </div>
         </div>
       </div>
-          </br>
-          </br>
-
-      <div class="return-login" >
+      </br>
+      </br>
+      <div class="return-login">
         <h2>Welcome</h2>
         <p>
         <div id="userName"></div>
@@ -43,66 +42,63 @@
         <button class="btn btn-success" type="button" id="return">Return Cars</button>
         <button class="btn btn-danger " type="button" id="logout">Logout</button>
       </div>
-<form>
-      <div class="filterBox" style="background-color: #62929a;">
-        <h3>Filter</h3>
-        <div class="dropdown">
-          <select id="vehicle">
-          <option selected>Vehicle Type</option>
-          <option value="Car">Car</option>
-          <option value="SUV">SUV</option>
-          <option value="Exclusive">Exclusive</option>
-          </select>
+      <form method="POST" action="/">
+        <div class="filterBox" style="background-color: #62929A;">
+          <h3>Filter</h3>
+          <div class="dropdown">
+            <select id="vehicle" name="vehicle">
+              <option selected>Vehicle Type</option>
+              <option value="Car">Car</option>
+              <option value="SUV">SUV</option>
+              <option value="Exclusive">Exclusive</option>
+            </select>
+          </div>
+          </br>
+          <div class="dropdown">
+            <select id="color" name="color" aria-labelledby="dropdownMenuButton">
+              <option selected>Color</option>
+              <option value="Red">Red</option>
+              <option value="Green">Green</option>
+              <option value="Blue">Blue</option>
+              <option value="Black">Black</option>
+              <option value="Orange">Orange</option>
+              {{!-- <option value="All">All</option> --}}
+            </select>
+          </div>
+          </br>
+          <div class="dropdown">
+            <select id="priceRange" name="priceRange" aria-labelledby="dropdownMenuButton">
+              <option selected>Price Range</option>
+              <option value="1">Below $500</option>
+              <option value="2">$501 to $999</option>
+              <option value="3">$1000 to $2999</option>
+              <option value="4">$3000 to $6999</option>
+              <option value="5">Above $7000</option>
+            </select>
+          </div>
+          </br>
+          <button class="btn btn-success" id="filterSubmit">Submit</button>
+          </br>
         </div>
-        </br>
-        <div class="dropdown">
-          <select id="color"  aria-labelledby="dropdownMenuButton">
-            <option selected>Color</option>
-            <option value="Red">Red</option>
-            <option value="Green">Green</option>
-            <option value="Blue">Blue</option>
-            <option value="Black">Black</option>
-            <option value="Orange">Orange</option>
-            <option value="All">All</option>
-          </select>
-        </div>
-        </br>
-        <div class="dropdown">
-          <select id="priceRange"  aria-labelledby="dropdownMenuButton">
-            <option selected>Price Range</option>
-            <option value="1">Below $500</option>
-            <option value="2">$501 to $999</option>
-            <option value="3">$1000 to $2999</option>
-            <option value="4">$3000 to $6999</option>
-            <option value="5">Above $7000</option>
-          </select>
-        </div>
-        </br>
-        <button class="btn btn-success" id="filterSubmit" >Submit</button>
-      </br>
-      </div>
       </form>
-</br>
-</br>      
-</br>
-</br>
-<div class="contact" >
-  <h2>Contact Us!</h2>
-<i class="fa fa-github fa-5x" aria-hidden="true"></i> 
-</br>
-</br>
-<i class="fa fa-linkedin fa-5x" aria-hidden="true"></i>
-</br>
-</br>
-<i class="fa fa-file-pdf-o fa-5x" aria-hidden="true"></i>
-
-</div>
-
+      </br>
+      </br>
+      </br>
+      </br>
+      <div class="contact">
+        <h2>Contact Us!</h2>
+        <i class="fa fa-github fa-5x" aria-hidden="true"></i>
+        </br>
+        </br>
+        <i class="fa fa-linkedin fa-5x" aria-hidden="true"></i>
+        </br>
+        </br>
+        <i class="fa fa-file-pdf-o fa-5x" aria-hidden="true"></i>
+      </div>
     </div>
-
     <div class="col-md-9">
       <div>
-        <p id="vehicleType">All Vehicles</p>
+        <p id="vehicleType">{{vehicleType}}</p>
         <container>
           {{#each cars}}
           <div id={{model}} class="card" style="width: 288px; height: 344px;">
@@ -126,7 +122,6 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog">
-
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -148,9 +143,6 @@
     </div>
   </div>
 </div>
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
   integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"

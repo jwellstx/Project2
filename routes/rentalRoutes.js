@@ -70,10 +70,10 @@ module.exports = function (app) {
           id: req.body.transactionId
         }
       }).then(response2 => {
-        var d = new Date(response2.createdAt).getSeconds();
-        var d2 = new Date().getSeconds();
-        var total = (d2 - d) * response2.pricePaid;
-        res.json({ totalprice: total});
+        // var d = new Date(response2.createdAt).getMinutes();
+        // var d2 = new Date().getMinutes();
+        // var total = (d2 - d) * response2.pricePaid;
+        res.json({ totalprice: response2.pricePaid});
       });
     })
   })

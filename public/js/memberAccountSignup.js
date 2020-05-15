@@ -1,5 +1,3 @@
-console.log("In member Account signup!");
-
 var $submitBtn = $("#submit");
 
 var API = {
