@@ -66,7 +66,7 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 }
 
 .return-login{
-	margin : 158px 20px 20px 40px;
+	margin : 158px 60px 20px 0px;
     background-color:#62929a;
     border-radius: .25rem;
     box-shadow: 0px 5px 15px 0px;
@@ -76,12 +76,24 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 	
 }
 
+.filterBox{
+	width: 304.57px;
+	border-radius: .25rem;
+}
+
+h3{
+	padding-top: 20px;
+}
+
 h2{
   font-size: 60px;
   color: whitesmoke;
   font-family: 'Satisfy', cursive;
 }
 
+#myModal{
+	background-color: #363434;
+}
 #userName{
 	color: whitesmoke;
 	font-size: 40px;
