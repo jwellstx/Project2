@@ -30,7 +30,6 @@ module.exports = function (app) {
       var range = req.body.priceRange.split("-");
       minPrice = range[0];
       maxPrice = range[1];
-      console.log(minPrice + "  " + maxPrice);
       query.pricePerDay = { [op.between]: [minPrice, maxPrice] };
     }
 
