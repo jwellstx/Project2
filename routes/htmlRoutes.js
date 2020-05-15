@@ -22,15 +22,18 @@ module.exports = function (app) {
 
   app.post("/", function (req, res) {
     var query = {};
-    var minPrice = 0;
-    var maxPrice = 1000;
     if (req.body.vehicle !== "Vehicle Type") query.vehicleType = vehicleTypeActual = req.body.vehicle;
     else vehicleTypeActual = "All Vehicles";  // added just for the display
     if (req.body.color !== "Color") query.color = req.body.color;
 
-    // query.price = {$between: "[0,1000]"};
+    if (req.body.priceRange !== "Price Range") {
+      var range = req.body.priceRange.split("-");
+      minPrice = range[0];
+      maxPrice = range[1];
+      console.log(minPrice + "  " + maxPrice);
+      query.pricePerDay = { [op.between]: [minPrice, maxPrice] };
+    }
 
-    console.log(req.body.priceRange + " JUSTIN");
     db.Cars.findAll({
       where: query
     }).then(function (rows) {
