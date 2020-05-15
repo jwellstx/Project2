@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#profileBody").on("click", "#returnCar", function(e) {
+  $(".profileBody").on("click", "#returnCar", function(e) {
       // need event delegation for this function
     e.preventDefault();
     var transactionId = $(this).val();

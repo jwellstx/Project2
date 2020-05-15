@@ -27,10 +27,53 @@
             </div>
           </form>
         </div>
+        </br>
+        </br>
+        <div class="container">
+    <h3>Filter</h3>
+    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Vehicle Type
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Car</a>
+    <a class="dropdown-item" href="#">SUV</a>
+    <a class="dropdown-item" href="#">Exclusive</a>
+  </div>
+</div>
+</br>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Color
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Red</a>
+    <a class="dropdown-item" href="#">Green</a>
+    <a class="dropdown-item" href="#">Blue</a>
+    <a class="dropdown-item" href="#">Black</a>
+    <a class="dropdown-item" href="#">Orange</a>
+    <a class="dropdown-item" href="#">Other</a>
+  </div>
+</div>
+</br>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Price Range
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Below $500</a>
+    <a class="dropdown-item" href="#">$501 to $999</a>
+    <a class="dropdown-item" href="#">$1000 to $2999</a>
+    <a class="dropdown-item" href="#">$3000 to $6999</a>
+    <a class="dropdown-item" href="#">Above $7000</a>
+  </div>
+</div>
+</br>
+  </div>
       </div>
     </div>
  
-
+  
   
     <div class="return-login" style="height: max-content;">
       <h2>Welcome</h2>
@@ -58,8 +101,8 @@
               </h5>
               <br>
               <p class="card-text">${{pricePerDay}} per day</p>
-              <a href="#" data-id="{{id}}" data-price="{{pricePerDay}}" data-make="{{make}}" data-model="{{model}}"
-                class="rentMe btn btn-primary" data-toggle="modal" data-target="#myModal">Rent Me!</a>
+               <button data-id="{{id}}" data-price="{{pricePerDay}}" data-make="{{make}}" data-model="{{model}}"
+                class="rentMe btn btn-primary" data-toggle="modal" data-target="#myModal">Rent Me!</button>
             </div>
           </div>
           {{/each}}
@@ -84,11 +127,11 @@
          <div id="customerID"></div>
          <div id="carPrice"></div>
         <div id="carID"></div>
-        <button type="button" id="rentIt" class="btn btn-default">Rent Me!</button>
+        <button type="button" id="rentIt" class="btn btn-success">Rent Me!</button>
         <!-- end rental info-->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
