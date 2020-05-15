@@ -22,12 +22,12 @@ module.exports = function (app) {
                         CorrectEmail: true,
                         existPassword: true
                     }
-                    return res.json({ customerMatch });
+                    return res.json({ customerMatch, correctCredentials: true });
                 } else {
-                    return res.json({ CorrectPassword: false });
+                    return res.json({ correctCredentials: false });
                 }
             } else {
-                return res.json({ CorrectEmail: false });
+                return res.json({ correctCredentials: false });
             }
         });
     });

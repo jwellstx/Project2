@@ -4,7 +4,6 @@ const { Op } = require("sequelize");
 
 module.exports = function (app) {
   app.post("/members", (req, res) => {
-    console.log('REQ.BODY', req.body);
     db.Customer.findOne({
       where: {
         [Op.or]: [{
@@ -24,7 +23,19 @@ module.exports = function (app) {
           var data = req.body;
 
           db.Customer.create(data).then(function (newCustomer) {
-            res.json(newCustomer);  // need newCustomer to get id
+
+            var customerResponseObj = { 
+              customerId: newCustomer.id,
+              driversLicenseNo: newCustomer.driversLicenseNo,
+              email: newCustomer.email,
+              firstName: newCustomer.firstName,
+              lastName: newCustomer.lastName,
+              phone: newCustomer.phone,
+              updatedAt: newCustomer.updatedAt,
+              userExists: false,
+            }
+
+            res.json(customerResponseObj);  // need newCustomer to get id
           });
         }
       });

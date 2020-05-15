@@ -3,12 +3,12 @@ var db = require("../models");
 module.exports = function (app) {
   // Get all examples
   // this one is just for debug - delete for production
-  app.get("/justin", function (req, res) {
-    db.Transaction.findAll({ include: [db.Customer, db.Cars] }).then(function (dbExamples) {
-      console.log(dbExamples);
-      res.json(dbExamples);
-    });
-  });
+  // app.get("/justin", function (req, res) {
+  //   db.Transaction.findAll({ include: [db.Customer, db.Cars] }).then(function (dbExamples) {
+  //     console.log(dbExamples);
+  //     res.json(dbExamples);
+  //   });
+  // });
 
   // Create a new example
   app.post("/rent", function (req, res) {
@@ -20,11 +20,11 @@ module.exports = function (app) {
     }).then(count => {
       if (count > 0) {
         console.log("Car is currently being rented");
-        res.json(count);
+        res.json(count); // this will be > 0 if rented (ideally only every '1' otherwise car if rented twice)
       }
       else {
         db.Transaction.create(req.body).then(function (dbTransaction) {
-          res.json(dbTransaction.Id);
+          res.json(0);
         });
       }
     });
@@ -65,7 +65,16 @@ module.exports = function (app) {
         id: req.body.transactionId
       }
     }).then(response => {
-      res.json(response);
+      db.Transaction.findOne({
+        where: {
+          id: req.body.transactionId
+        }
+      }).then(response2 => {
+        // var d = new Date(response2.createdAt).getMinutes();
+        // var d2 = new Date().getMinutes();
+        // var total = (d2 - d) * response2.pricePaid;
+        res.json({ totalprice: response2.pricePaid});
+      });
     })
   })
 }

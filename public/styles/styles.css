@@ -24,6 +24,10 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 
 }
 
+.card-body{
+	width: 305px;
+}
+
 .card-img-top{
   border: black;
   border-width: 5px;
@@ -51,6 +55,11 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 	color: whitesmoke;
 }
 
+.return-login{
+	height: 365px;
+	width: 305px
+}
+
 .card-text{
 	font-family: 'Lato', sans-serif;
 	color: whitesmoke;
@@ -66,7 +75,7 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 }
 
 .return-login{
-	margin : 158px 20px 20px 40px;
+	margin : 158px 60px 20px 0px;
     background-color:#62929a;
     border-radius: .25rem;
     box-shadow: 0px 5px 15px 0px;
@@ -76,10 +85,57 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 	
 }
 
+#filterSubmit{
+	margin-bottom: 20px;
+}
+
+.filterBox{
+	width: 305px;
+	border-radius: .25rem;
+}
+
+h3{
+	padding-top: 20px;
+	color: whitesmoke;
+	font-family:'Bad Script', cursive;
+	font-size: 60px;
+	font-weight: bold;
+}
+
 h2{
   font-size: 60px;
   color: whitesmoke;
   font-family: 'Satisfy', cursive;
+  padding-top: 20px;
+}
+
+.contact{
+	width:305px;
+	border-radius: .23rem;
+	background-color: #62929a;
+}
+
+.fa, .fas{
+	
+	color: whitesmoke;
+}
+
+#myModal{
+	background-color: #363434;
+}
+
+.modal-content{
+	background-color: #62929a;
+}
+
+.modal-title{
+	font-family: 'Bad Script', cursive;
+	color:whitesmoke;
+}
+
+.modal-body{
+	color: whitesmoke;
+	font-family: 'Lato', sans-serif;
 }
 
 #userName{
@@ -87,6 +143,10 @@ h2{
 	font-size: 40px;
 }
 
+#dropdownMenuButton{
+	border-color: black;
+	
+}
 
 #vehicleType{
 	color:whitesmoke;
@@ -171,20 +231,7 @@ ul li input[type=radio]{
 	position: absolute;
 	visibility: hidden;
 }
-ul li label {
-    display: inline-block;
-    position: relative;
-    font-weight: 300;
-    text-transform: capitalize;
-    font-size: 1em;
-    padding: 1.2em 0;
-    margin: .7em 0;
-    z-index: 9;
-	color: #fff;
-    letter-spacing: 1px;
-    cursor: pointer;
-    -webkit-transition: all 0.25s linear;
-}
+
 ul li:hover label{
 	color: #fff;
 }

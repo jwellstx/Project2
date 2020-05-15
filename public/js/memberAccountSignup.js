@@ -1,5 +1,3 @@
-console.log("In member Account signup!");
-
 var $submitBtn = $("#submit");
 
 var API = {
@@ -46,7 +44,7 @@ var handleFormSubmit = function (event) {
     API.saveCustomer(customer).then(function (apIresponse) {
       localStorage.setItem("customerFirstName", apIresponse.firstName);
       localStorage.setItem("customerLastName", apIresponse.lastName);
-      localStorage.setItem("customerID", apIresponse.id);
+      localStorage.setItem("customerID", apIresponse.customerId);
       window.location.assign("/");
       console.log(apIresponse, "result");
       $("#firstName").val("");
