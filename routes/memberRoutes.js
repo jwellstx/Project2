@@ -24,7 +24,19 @@ module.exports = function (app) {
           var data = req.body;
 
           db.Customer.create(data).then(function (newCustomer) {
-            res.json(newCustomer);  // need newCustomer to get id
+
+            var customerResponseObj = { 
+              customerId: newCustomer.id,
+              driversLicenseNo: newCustomer.driversLicenseNo,
+              email: newCustomer.email,
+              firstName: newCustomer.firstName,
+              lastName: newCustomer.lastName,
+              phone: newCustomer.phone,
+              updatedAt: newCustomer.updatedAt,
+              userExists: false,
+            }
+
+            res.json(customerResponseObj);  // need newCustomer to get id
           });
         }
       });

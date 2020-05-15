@@ -13,9 +13,9 @@ $(".rentMe").on("click", function (e) {
   var checkCustomerID = localStorage.getItem("customerID");
   if (checkUserFirstName && checkUserLastName && checkCustomerID) {
     $("#userName2").html(checkUserFirstName + " " + checkUserLastName).val(checkUserFirstName + " " + checkUserLastName);
-    $("#customerID").html("Customer Id:"+checkCustomerID).val(checkCustomerID);
-    $("#carPrice").html("Price:"+carPrice).val(carPrice);
-    $("#carID").html("Car Id:"+carId).val(carId);
+    $("#customerID").html("Customer Id:" + checkCustomerID).val(checkCustomerID);
+    $("#carPrice").html("Price:" + carPrice).val(carPrice);
+    $("#carID").html("Car Id:" + carId).val(carId);
   }
   else {
     e.stopPropagation();  // prevents modal from popping up if not logged in.
@@ -32,7 +32,7 @@ $("#return").on("click", (e) => {
 
 console.log("In Login Account!");
 
-$("#myModal").on("click", "#rentIt", function(e) {
+$("#myModal").on("click", "#rentIt", function (e) {
   e.preventDefault();
 
   var transaction = {
@@ -48,14 +48,10 @@ $("#myModal").on("click", "#rentIt", function(e) {
       .trim()
   };
 
-  API.createTransaction(transaction).then(function(apIresponse) {
+  API.createTransaction(transaction).then(function (apIresponse) {
     console.log(apIresponse);
     if (apIresponse === 1) alert("Sorry, car is already rented!!");
-    else {
-      // why is this never hit?
-      alert("Succesfully rented!!");
-      // $("#myModal").toggle();
-    }
+    else alert("Succesfully rented!!");
   });
 
 })
@@ -96,28 +92,31 @@ var handleFormSubmit = function (event) {
       .val()
       .trim()
   };
-  
-  if($("#email").val()== "" || $("#password").val()==0 ){
+
+  if ($("#email").val() == "" || $("#password").val() == 0) {
     $("#DivError").show();
     $("#error").text("Must enter your information")
-   
-  }else{
-    API.returningCustomer(customer).then(function(apIresponse) {
-      console.log(apIresponse, "result");
-      localStorage.setItem("customerFirstName", apIresponse.customerMatch.firstName);
-      localStorage.setItem("customerLastName", apIresponse.customerMatch.lastName);
-      localStorage.setItem("customerID", apIresponse.customerMatch.customerId)
-      window.location.assign("/");
-  
+
+  } else {
+    API.returningCustomer(customer).then(function (apIresponse) {
+      console.log(apIresponse.CorrectPassword);
+      if (apIresponse.correctCredentials) {
+        localStorage.setItem("customerFirstName", apIresponse.customerMatch.firstName);
+        localStorage.setItem("customerLastName", apIresponse.customerMatch.lastName);
+        localStorage.setItem("customerID", apIresponse.customerMatch.customerId);
+        $("#userName").html(apIresponse.customerMatch.firstName + " " + apIresponse.customerMatch.lastName);
+        $(".userForm").hide();
+        $(".return-login").show();
+      }
+      else alert("Sorry, your email/password is incorrect! Please try again!");
+
       $("#email").val("");
       $("#password").val("");
     });
-    
   }
-  
 };
 
-$(document).ready(function() {
+$(document).ready(function () {
   $(".return-login").hide();
   $("#DivError").hide();
   var checkUserFirstName = localStorage.getItem("customerFirstName");
@@ -130,7 +129,6 @@ $(document).ready(function() {
 
     $("#logout").on("click", () => {
       localStorage.clear();
-      window.location.assign("/");
       $(".return-login").hide();
       $(".userForm").show();
     })

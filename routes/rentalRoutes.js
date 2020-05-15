@@ -20,11 +20,11 @@ module.exports = function (app) {
     }).then(count => {
       if (count > 0) {
         console.log("Car is currently being rented");
-        res.json(count);
+        res.json(count); // this will be > 0 if rented (ideally only every '1' otherwise car if rented twice)
       }
       else {
         db.Transaction.create(req.body).then(function (dbTransaction) {
-          res.json(dbTransaction.Id);
+          res.json(0);
         });
       }
     });
