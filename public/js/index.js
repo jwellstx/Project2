@@ -30,8 +30,6 @@ $("#return").on("click", (e) => {
   window.location.assign("/return?id=" + customerId);
 });
 
-console.log("In Login Account!");
-
 $("#myModal").on("click", "#rentIt", function (e) {
   e.preventDefault();
 
@@ -51,12 +49,12 @@ $("#myModal").on("click", "#rentIt", function (e) {
   API.createTransaction(transaction).then(function (apIresponse) {
     console.log(apIresponse);
     if (apIresponse === 1) alert("Sorry, car is already rented!!");
-    else alert("Succesfully rented!!");
+    else {
+      alert("Succesfully rented!!");
+      location.reload();
+    }
   });
-
 })
-
-var $LoginBtn = $("#login");
 
 var API = {
   returningCustomer: function (customer) {
@@ -65,7 +63,7 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "login",
+      url: "/login",
       data: JSON.stringify(customer)
     });
   },
@@ -83,6 +81,7 @@ var API = {
 
 var handleFormSubmit = function (event) {
   event.preventDefault();
+  console.log("hello");
 
   var customer = {
     email: $("#email")
@@ -117,6 +116,8 @@ var handleFormSubmit = function (event) {
 };
 
 $(document).ready(function () {
+  var $LoginBtn = $("#login");
+
   $(".return-login").hide();
   $("#DivError").hide();
   var checkUserFirstName = localStorage.getItem("customerFirstName");
@@ -127,13 +128,12 @@ $(document).ready(function () {
     $(".userForm").hide();
     $(".return-login").show();
 
-    $("#logout").on("click", () => {
+    $(".anchor").on("click", "#logout",  () => {
       localStorage.clear();
       $(".return-login").hide();
       $(".userForm").show();
-    })
-  }
-  else {
-    $LoginBtn.on("click", handleFormSubmit);
+    });
+
+    $(".anchor").on("click", "#login", handleFormSubmit);
   }
 });
