@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "ruffio2016",
+    "password": "password",
     "database": "hotwheels",
     "host": "localhost",
     "dialect": "mysql"

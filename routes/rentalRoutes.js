@@ -3,12 +3,12 @@ var db = require("../models");
 module.exports = function (app) {
   // Get all examples
   // this one is just for debug - delete for production
-  app.get("/justin", function (req, res) {
-    db.Transaction.findAll({ include: [db.Customer, db.Cars] }).then(function (dbExamples) {
-      console.log(dbExamples);
-      res.json(dbExamples);
-    });
-  });
+  // app.get("/justin", function (req, res) {
+  //   db.Transaction.findAll({ include: [db.Customer, db.Cars] }).then(function (dbExamples) {
+  //     console.log(dbExamples);
+  //     res.json(dbExamples);
+  //   });
+  // });
 
   // Create a new example
   app.post("/rent", function (req, res) {
@@ -65,7 +65,16 @@ module.exports = function (app) {
         id: req.body.transactionId
       }
     }).then(response => {
-      res.json(response);
+      db.Transaction.findOne({
+        where: {
+          id: req.body.transactionId
+        }
+      }).then(response2 => {
+        var d = new Date(response2.createdAt).getSeconds();
+        var d2 = new Date().getSeconds();
+        var total = (d2 - d) * response2.pricePaid;
+        res.json({ totalprice: total});
+      });
     })
   })
 }
