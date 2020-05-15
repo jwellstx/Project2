@@ -1,0 +1,21 @@
+<container class="rental profileBody">
+          {{#each rentals}}
+          <div id={{Car.model}} class="card" style="width: 288px; height: 500px">
+            <img src="/img/{{Car.model}}.jpg" class="card-img-top" alt={{model}}>
+            <div class="card-body">
+              <h5 class="card-title">
+                <p><span id="makeFont">{{Car.make}}<span> <span id="modelFont">{{Car.model}}</span></p>
+              </h5>
+              <p>
+                  </br>
+        <button class="btn btn-danger" type="button" id="returnCar" value="{{id}}">Return this car!</button>
+        </br>
+            <div>{{Car.make}} {{Car.model}} {{Car.licensePlate}}</div> rented on: {{createdAt}} for customer: 
+            {{Customer.firstName}} {{Customer.lastName}}</p>
+            </div>
+          </div>
+          {{/each}}
+        </container>
+
+        <span><a href="/" class="btn btn-danger" type="button" id="homeBtn">Back to Cars</a></span>
+<script src="js/return.js"></script>
