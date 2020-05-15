@@ -24,6 +24,10 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 
 }
 
+.card-body{
+	width: 305px;
+}
+
 .card-img-top{
   border: black;
   border-width: 5px;
@@ -49,6 +53,11 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
     max-height: 24px;
 	font-family: 'Bad Script', cursive;
 	color: whitesmoke;
+}
+
+.return-login{
+	height: 365px;
+	width: 305px
 }
 
 .card-text{
@@ -81,7 +90,7 @@ transform: translate(0px, -90px) skew(0deg, -10deg);
 }
 
 .filterBox{
-	width: 304.57px;
+	width: 305px;
 	border-radius: .25rem;
 }
 
@@ -97,11 +106,38 @@ h2{
   font-size: 60px;
   color: whitesmoke;
   font-family: 'Satisfy', cursive;
+  padding-top: 20px;
+}
+
+.contact{
+	width:305px;
+	border-radius: .23rem;
+	background-color: #62929a;
+}
+
+.fa{
+	
+	color: whitesmoke;
 }
 
 #myModal{
 	background-color: #363434;
 }
+
+.modal-content{
+	background-color: #62929a;
+}
+
+.modal-title{
+	font-family: 'Bad Script', cursive;
+	color:whitesmoke;
+}
+
+.modal-body{
+	color: whitesmoke;
+	font-family: 'Lato', sans-serif;
+}
+
 #userName{
 	color: whitesmoke;
 	font-size: 40px;
