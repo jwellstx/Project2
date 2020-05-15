@@ -99,6 +99,10 @@ h2{
 	font-size: 40px;
 }
 
+.dropdown-menu{
+	border: black;
+	border-width: 5px;
+}
 
 #vehicleType{
 	color:whitesmoke;
