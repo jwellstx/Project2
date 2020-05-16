@@ -1,16 +1,7 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Get all examples
-  // this one is just for debug - delete for production
-  // app.get("/justin", function (req, res) {
-  //   db.Transaction.findAll({ include: [db.Customer, db.Cars] }).then(function (dbExamples) {
-  //     console.log(dbExamples);
-  //     res.json(dbExamples);
-  //   });
-  // });
-
-  // Create a new example
+  // Post route that simply checks if a car is already rented or not to prevent car from being rented twice
   app.post("/rent", function (req, res) {
     db.Transaction.count({
       where: {
@@ -30,6 +21,7 @@ module.exports = function (app) {
     });
   });
 
+  // get route that display which car a user has current rented on the 'return car' handlebar page
   app.get("/return", (req, res) => {
     var customerId = req.query.id;
 
@@ -57,6 +49,7 @@ module.exports = function (app) {
     }
   });
 
+  // put that update rentalStatus in the transaction DB if user return a car
   app.put("/return", (req, res) => {
     db.Transaction.update({
       rentalStatus: "0"
@@ -70,6 +63,7 @@ module.exports = function (app) {
           id: req.body.transactionId
         }
       }).then(response2 => {
+        // calculate time different and multiple by pricePaid (sometimes giving negative values)
         // var d = new Date(response2.createdAt).getMinutes();
         // var d2 = new Date().getMinutes();
         // var total = (d2 - d) * response2.pricePaid;

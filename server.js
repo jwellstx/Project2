@@ -32,19 +32,21 @@ var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-// if (process.env.NODE_ENV === "test") {
-syncOptions.force = false;
-// }
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
+if (require.main === module) {  // for integration tests - only run app.listen if this is main script
+  db.sequelize.sync(syncOptions).then(function() {
+    app.listen(PORT, function() {
+      console.log(
+        "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+        PORT,
+        PORT
+      );
+    });
   });
-});
+}
 
 module.exports = app;

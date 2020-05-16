@@ -1,5 +1,5 @@
 var $submitBtn = $("#submit");
-
+// API object to handle post route to create a new customer
 var API = {
   saveCustomer: function (customer) {
     return $.ajax({
@@ -13,6 +13,7 @@ var API = {
   }
 };
 
+// function to gather new users registration information then call above saveCustomer request
 var handleFormSubmit = function (event) {
   event.preventDefault();
 
@@ -42,6 +43,8 @@ var handleFormSubmit = function (event) {
 
   if (validate()) {
     API.saveCustomer(customer).then(function (apIresponse) {
+      // upon new user, setup the page to show them logged in
+      // enhance this to use something like express-sessions instead of localstorage
       localStorage.setItem("customerFirstName", apIresponse.firstName);
       localStorage.setItem("customerLastName", apIresponse.lastName);
       localStorage.setItem("customerID", apIresponse.customerId);
@@ -61,6 +64,7 @@ var handleFormSubmit = function (event) {
   }
 };
 
+// validate all input fields were filled out on register form
 function validate() {
   var validateF = true;
   $("input").each(function() {

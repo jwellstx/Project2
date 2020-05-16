@@ -25,6 +25,8 @@ insert into cars (make, model, vehicleType, color, licensePlate, pricePerDay, cr
 ("Exclusive", "Batmans Tumbler", "Exclusive", "Black", "BATMAN", "20000.00", current_date(), current_date()),
 ("Exclusive", "Wienermobile", "Exclusive", "Orange", "WEENR", "1.99", current_date(), current_date());
 
+
+-- Don't need to insert these below anymore, only inject cars
 insert into customers (firstName, lastName, email, phone, driversLicenseNo, driversLicenseState, createdAt, updatedAt) VALUES
 ("Justin", "Wells", "jwellstx@gmail.com", "8176571989", "1235234", "TX", current_date(), current_date());
 

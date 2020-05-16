@@ -1,4 +1,4 @@
-// API object to handle returning customer and create transaction route calls
+// API object to handle returning customer post request and create transaction post request
 var API = {
   returningCustomer: function (customer) {
     return $.ajax({
@@ -42,6 +42,7 @@ var handleFormSubmit = function (event) {
   } else {
     API.returningCustomer(customer).then(function (apIresponse) {
       if (apIresponse.correctCredentials) {
+        // User was in database - successfully log them back in
         localStorage.setItem("customerFirstName", apIresponse.customerMatch.firstName);
         localStorage.setItem("customerLastName", apIresponse.customerMatch.lastName);
         localStorage.setItem("customerID", apIresponse.customerMatch.customerId);
@@ -72,7 +73,7 @@ function setupClickEvents() {
     var checkUserFirstName = localStorage.getItem("customerFirstName");
     var checkUserLastName = localStorage.getItem("customerLastName");
     var checkCustomerID = localStorage.getItem("customerID");
-    // check if our user is logged in, else error - cant rent a car if not logged in
+    // check if our user is logged in to allow them to rent a car, else error - cant rent a car if not logged in
     if (checkUserFirstName && checkUserLastName && checkCustomerID) {
       $("#userName2").html(checkUserFirstName + " " + checkUserLastName).val(checkUserFirstName + " " + checkUserLastName);
       $("#customerID").html("Customer Id:" + checkCustomerID).val(checkCustomerID);

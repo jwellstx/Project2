@@ -3,7 +3,8 @@ const Sequelize = require('sequelize');
 const op = Sequelize.Op;
 
 module.exports = function (app) {
-  // Load index page
+  // Load index page (landing page)
+  // enhance this to only display cars that are not already rented
   app.get("/", function (req, res) {
     db.Cars.findAll({
       where: req.body
@@ -20,6 +21,7 @@ module.exports = function (app) {
     });
   });
 
+  // render index page but this time include where clause based on users filter preferences
   app.post("/", function (req, res) {
     var query = {};
     if (req.body.vehicle !== "Vehicle Type") query.vehicleType = vehicleTypeActual = req.body.vehicle;
@@ -40,10 +42,12 @@ module.exports = function (app) {
     });
   });
 
+  // render member registration page for new users
   app.get("/member", (req, res) => {
     res.render("memberAccount");
   });
 
+  // catch all 404 error page
   app.get("*", function (req, res) {
     res.render("404");
   });

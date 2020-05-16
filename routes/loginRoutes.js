@@ -2,8 +2,8 @@ var db = require("../models");
 const bcrypt = require("bcryptjs");
 
 module.exports = function (app) {
-
-
+    // post route to take in users email/password and check the db if their credentials match
+    // if so, log them in, if not return either bad email or password
     app.post("/login", (req, res) => {
         db.Customer.findOne({
             where: {

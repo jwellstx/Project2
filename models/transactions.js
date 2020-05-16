@@ -27,6 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
+  // each transaction has a car and a customer
   Transaction.associate = models => {
     Transaction.belongsTo(models.Cars, {});
     Transaction.belongsTo(models.Customer, {});
