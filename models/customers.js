@@ -58,6 +58,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
+  // each transaction has one customer
   Customer.associate = models => {
     Customer.hasOne(models.Transaction, {
       // foreignKey: {

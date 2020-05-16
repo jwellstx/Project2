@@ -3,6 +3,8 @@ const bcrypt = require("bcryptjs");
 const { Op } = require("sequelize");
 
 module.exports = function (app) {
+  // post route that take in all the user registration information and create a new user in the database
+  // return new user information to update that they are logged in
   app.post("/members", (req, res) => {
     db.Customer.findOne({
       where: {

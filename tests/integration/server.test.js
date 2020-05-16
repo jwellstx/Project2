@@ -21,6 +21,7 @@ describe('Server test', () => {
         const results = await chaiRequest
             .get('/')
 
+        // its not a lot... but its a start
         expect(results.status).to.equal(200);
         expect(results.text).to.be.a('string');
     });
@@ -54,7 +55,7 @@ describe('Server test', () => {
     it('server should return good creds for login', async() => {
         const postContent = {
             email: "jwellstx@gmail.com",
-            password: "1234"
+            password: "1234"    // probably dont actually put password in here - create  dummy account with post then do a get?
         }
         const results = await chaiRequest
             .post('/login')
